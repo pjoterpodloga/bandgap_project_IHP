@@ -1,0 +1,16 @@
+06-Jun-2026 16:19:33 | INFO    | Your Klayout version is: KLayout 0.30.8
+06-Jun-2026 16:19:33 | INFO    | Running SG13CMOS5L LVS checks on design /foss/designs/master/bandgap_res/const_gm_bias.gds on cell TOP
+06-Jun-2026 16:19:34 | INFO    | ==============================================================================
+06-Jun-2026 16:19:34 | INFO    | Important Summary
+06-Jun-2026 16:19:34 | INFO    | +------------------+--------------------------------------------------------------+
+06-Jun-2026 16:19:34 | INFO    | | Status           | PASS                                                         |
+06-Jun-2026 16:19:34 | INFO    | | Mode             | COMPARE                                                      |
+06-Jun-2026 16:19:34 | INFO    | | Outcome          | Comparison mode: PASS (netlists match).                      |
+06-Jun-2026 16:19:34 | INFO    | | Layout           | const_gm_bias.gds                                            |
+06-Jun-2026 16:19:34 | INFO    | | Top Cell         | TOP                                                          |
+06-Jun-2026 16:19:34 | INFO    | | Results Dir      | /foss/designs/master/lvs                                     |
+06-Jun-2026 16:19:34 | INFO    | | Warnings         | 0                                                            |
+06-Jun-2026 16:19:34 | INFO    | | Errors           | 0                                                            |
+06-Jun-2026 16:19:34 | INFO    | | Run Time (s)     | 0.77                                                         |
+06-Jun-2026 16:19:34 | INFO    | +------------------+--------------------------------------------------------------+
+06-Jun-2026 16:19:34 | INFO    | ==============================================================================

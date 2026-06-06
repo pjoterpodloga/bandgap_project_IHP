@@ -1,0 +1,21 @@
+* Extracted by KLayout with SG13CMOS5L LVS runset on : 06/06/2026 16:20
+
+.SUBCKT CONST_GM_BIAS VP IBIAS GD
+MM1 GD NBIAS NET1 GD sg13_hv_nmos L=2u W=0.6u AS=0p AD=0p PS=0u PD=0u rfmode=0
+MM3 VR NBIAS NET2 GD sg13_hv_nmos L=2u W=2.4u AS=0p AD=0p PS=0u PD=0u rfmode=0
+MM7 NET3 PBIAS PBIAS VP sg13_hv_pmos L=2u W=0.6u AS=0p AD=0p PS=0u PD=0u
++ rfmode=0
+MM5 NET4 PBIAS NBIAS VP sg13_hv_pmos L=2u W=0.6u AS=0p AD=0p PS=0u PD=0u
++ rfmode=0
+MM2 NET1 NBIAS NBIAS GD sg13_hv_nmos L=2u W=0.6u AS=0p AD=0p PS=0u PD=0u
++ rfmode=0
+MM4 NET2 NBIAS PBIAS GD sg13_hv_nmos L=2u W=2.4u AS=0p AD=0p PS=0u PD=0u
++ rfmode=0
+MM8 VP PBIAS NET3 VP sg13_hv_pmos L=2u W=0.6u AS=0p AD=0p PS=0u PD=0u rfmode=0
+MM6 VP PBIAS NET4 VP sg13_hv_pmos L=2u W=0.6u AS=0p AD=0p PS=0u PD=0u rfmode=0
+MM9 NET5 PBIAS IBIAS VP sg13_hv_pmos L=2u W=0.6u AS=0p AD=0p PS=0u PD=0u
++ rfmode=0
+MM10 VP PBIAS NET5 VP sg13_hv_pmos L=2u W=0.6u AS=0p AD=0p PS=0u PD=0u rfmode=0
+11R1 VR GD SUB! RPPD w=0.5u l=2u ps=0u b=20 m=1
+MM11 VP PBIAS VP VP sg13_hv_pmos L=2u W=2.4u AS=0p AD=0p PS=0u PD=0u rfmode=0
+.ENDS CONST_GM_BIAS
