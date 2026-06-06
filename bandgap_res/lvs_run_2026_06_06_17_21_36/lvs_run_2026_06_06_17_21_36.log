@@ -1,0 +1,18 @@
+06-Jun-2026 19:21:36 | INFO    | Your Klayout version is: KLayout 0.30.8
+06-Jun-2026 19:21:36 | ERROR   | Missing required input: provide --layout for extraction flow, or provide --layout_netlist for netlist-vs-netlist flow.
+06-Jun-2026 19:21:36 | INFO    | ==============================================================================
+06-Jun-2026 19:21:36 | INFO    | Important Summary
+06-Jun-2026 19:21:36 | INFO    | +------------------+--------------------------------------------------------------+
+06-Jun-2026 19:21:36 | INFO    | | Status           | FAIL                                                         |
+06-Jun-2026 19:21:36 | INFO    | | Mode             | COMPARE                                                      |
+06-Jun-2026 19:21:36 | INFO    | | Outcome          | Comparison mode: outcome unknown (layout log not found).     |
+06-Jun-2026 19:21:36 | INFO    | | Layout           | n/a                                                          |
+06-Jun-2026 19:21:36 | INFO    | | Top Cell         | n/a                                                          |
+06-Jun-2026 19:21:36 | INFO    | | Results Dir      | /foss/designs/master/bandgap_res/lvs_run_2026_06_06_17_21_36 |
+06-Jun-2026 19:21:36 | INFO    | | Warnings         | 0                                                            |
+06-Jun-2026 19:21:36 | INFO    | | Errors           | 1                                                            |
+06-Jun-2026 19:21:36 | INFO    | | Run Time (s)     | 0.096                                                        |
+06-Jun-2026 19:21:36 | INFO    | +------------------+--------------------------------------------------------------+
+06-Jun-2026 19:21:36 | ERROR   | Key errors:
+06-Jun-2026 19:21:36 | ERROR   |   - Missing required input: provide --layout for extraction flow, or provide --layout_netlist for netlist-vs-netlist flow.
+06-Jun-2026 19:21:36 | INFO    | ==============================================================================

@@ -198,11 +198,11 @@ C {ipin.sym} 0 0 0 0 {name=p2 lab=gd}
 C {opin.sym} 480 -320 1 0 {name=p3 lab=ibias}
 C {sg13cmos5l_pr/rppd.sym} 260 -50 0 0 {name=R1
 w=0.5e-6
-l=2e-6
+l=57e-6
 model=rppd
-body=sub!
+body=gd
 spiceprefix=X
-b=20
+b=0
 m=1
 value="expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )"
 }

@@ -1,21 +1,27 @@
-* Extracted by KLayout with SG13CMOS5L LVS runset on : 06/06/2026 16:20
+* Extracted by KLayout with SG13CMOS5L LVS runset on : 06/06/2026 20:00
 
-.SUBCKT CONST_GM_BIAS VP IBIAS GD
-MM1 GD NBIAS NET1 GD sg13_hv_nmos L=2u W=0.6u AS=0p AD=0p PS=0u PD=0u rfmode=0
-MM3 VR NBIAS NET2 GD sg13_hv_nmos L=2u W=2.4u AS=0p AD=0p PS=0u PD=0u rfmode=0
-MM7 NET3 PBIAS PBIAS VP sg13_hv_pmos L=2u W=0.6u AS=0p AD=0p PS=0u PD=0u
-+ rfmode=0
-MM5 NET4 PBIAS NBIAS VP sg13_hv_pmos L=2u W=0.6u AS=0p AD=0p PS=0u PD=0u
-+ rfmode=0
-MM2 NET1 NBIAS NBIAS GD sg13_hv_nmos L=2u W=0.6u AS=0p AD=0p PS=0u PD=0u
-+ rfmode=0
-MM4 NET2 NBIAS PBIAS GD sg13_hv_nmos L=2u W=2.4u AS=0p AD=0p PS=0u PD=0u
-+ rfmode=0
-MM8 VP PBIAS NET3 VP sg13_hv_pmos L=2u W=0.6u AS=0p AD=0p PS=0u PD=0u rfmode=0
-MM6 VP PBIAS NET4 VP sg13_hv_pmos L=2u W=0.6u AS=0p AD=0p PS=0u PD=0u rfmode=0
-MM9 NET5 PBIAS IBIAS VP sg13_hv_pmos L=2u W=0.6u AS=0p AD=0p PS=0u PD=0u
-+ rfmode=0
-MM10 VP PBIAS NET5 VP sg13_hv_pmos L=2u W=0.6u AS=0p AD=0p PS=0u PD=0u rfmode=0
-11R1 VR GD SUB! RPPD w=0.5u l=2u ps=0u b=20 m=1
-MM11 VP PBIAS VP VP sg13_hv_pmos L=2u W=2.4u AS=0p AD=0p PS=0u PD=0u rfmode=0
-.ENDS CONST_GM_BIAS
+.SUBCKT const_gm_bias gd ibias vp
+M$1 gd \$40 \$41 gd sg13_hv_nmos L=2u W=0.6u AS=0.204p AD=0.204p PS=1.88u
++ PD=1.88u rfmode=0
+M$2 \$39 \$40 \$42 gd sg13_hv_nmos L=2u W=2.4u AS=0.816p AD=0.816p PS=7.52u
++ PD=7.52u rfmode=0
+M$6 \$48 \$40 \$42 gd sg13_hv_nmos L=2u W=2.4u AS=0.816p AD=0.816p PS=7.52u
++ PD=7.52u rfmode=0
+M$7 \$40 \$40 \$41 gd sg13_hv_nmos L=2u W=0.6u AS=0.204p AD=0.204p PS=1.88u
++ PD=1.88u rfmode=0
+M$11 \$40 \$48 \$55 vp sg13_hv_pmos L=2u W=0.6u AS=0.204p AD=0.204p PS=1.88u
++ PD=1.88u rfmode=0
+M$12 \$48 \$48 \$56 vp sg13_hv_pmos L=2u W=0.6u AS=0.204p AD=0.204p PS=1.88u
++ PD=1.88u rfmode=0
+M$13 ibias \$48 \$57 vp sg13_hv_pmos L=2u W=0.6u AS=0.204p AD=0.204p PS=1.88u
++ PD=1.88u rfmode=0
+M$14 vp \$48 vp vp sg13_hv_pmos L=2u W=2.4u AS=0.816p AD=0.816p PS=7.52u
++ PD=7.52u rfmode=0
+M$16 vp \$48 \$55 vp sg13_hv_pmos L=2u W=0.6u AS=0.204p AD=0.204p PS=1.88u
++ PD=1.88u rfmode=0
+M$17 vp \$48 \$56 vp sg13_hv_pmos L=2u W=0.6u AS=0.204p AD=0.204p PS=1.88u
++ PD=1.88u rfmode=0
+M$18 vp \$48 \$57 vp sg13_hv_pmos L=2u W=0.6u AS=0.204p AD=0.204p PS=1.88u
++ PD=1.88u rfmode=0
+R$38 \$39 gd gd rppd w=0.5u l=57u ps=0u b=0 m=1
+.ENDS const_gm_bias
