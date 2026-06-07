@@ -5,8 +5,13 @@ V {}
 S {}
 F {}
 E {}
+L 4 1460 -200 1460 0 {}
+L 4 1460 0 1680 -0 {}
+L 4 1680 -200 1680 -0 {}
+L 4 1460 -200 1680 -200 {}
 L 7 840 -740 840 0 {dash=10
 }
+P 4 1 1940 -170 {}
 T {Opamp} 20 -760 0 0 0.4 0.4 {}
 T {Biasing} 860 -760 0 0 0.4 0.4 {}
 T {I*2} 250 -160 0 0 0.4 0.4 {}
@@ -16,9 +21,11 @@ T {I*1} 370 -530 0 0 0.4 0.4 {}
 T {I*1} 700 -160 0 0 0.4 0.4 {}
 T {I*1} 900 -160 0 0 0.4 0.4 {}
 T {I*1} 1100 -160 0 0 0.4 0.4 {}
-T {I*1} 1300 -590 0 0 0.4 0.4 {}
+T {I*2
+} 1300 -590 0 0 0.4 0.4 {}
 T {I*2} 500 -710 0 0 0.4 0.4 {}
 T {I*2} 700 -710 0 0 0.4 0.4 {}
+T {Dummy} 1460 -230 0 0 0.4 0.4 {}
 N 240 -380 340 -380 {lab=#net1}
 N 240 -60 240 -20 {lab=gd}
 N 540 -60 540 -20 {lab=gd}
@@ -173,6 +180,12 @@ N 0 -180 80 -180 {lab=bias}
 N 10 -90 80 -90 {lab=gd}
 N 80 -60 80 -20 {lab=gd}
 N 0 -20 80 -20 {lab=gd}
+N 1570 -90 1640 -90 {lab=gd}
+N 1570 -140 1570 -120 {lab=gd}
+N 1500 -140 1570 -140 {lab=gd}
+N 1500 -90 1530 -90 {lab=bias}
+N 1500 -40 1570 -40 {lab=gd}
+N 1570 -60 1570 -40 {lab=gd}
 C {lab_wire.sym} 190 -430 0 1 {name=p1 sig_type=std_logic lab=gd}
 C {lab_wire.sym} 290 -430 0 0 {name=p2 sig_type=std_logic lab=gd}
 C {lab_wire.sym} 290 -90 0 1 {name=p3 sig_type=std_logic lab=gd}
@@ -369,3 +382,15 @@ m=4
 model=sg13_hv_pmos
 spiceprefix=X
 }
+C {lab_wire.sym} 1620 -90 0 1 {name=p39 sig_type=std_logic lab=gd}
+C {sg13cmos5l_pr/sg13_hv_nmos.sym} 1550 -90 0 0 {name=M21
+l=0.9u
+w=1.2u
+ng=1
+m=8
+model=sg13_hv_nmos
+spiceprefix=X
+}
+C {lab_wire.sym} 1510 -140 0 1 {name=p40 sig_type=std_logic lab=gd}
+C {lab_wire.sym} 1510 -40 0 1 {name=p41 sig_type=std_logic lab=gd}
+C {lab_wire.sym} 1520 -90 0 0 {name=p42 sig_type=std_logic lab=bias}
