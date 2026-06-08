@@ -1,6 +1,6 @@
 from ngspice_utils import *
 
-parse_ngspice_raw("/Users/pjoter/Documents/magisterka/share_folder/master/simulations/opamp_dc_tb.raw")
+parse_ngspice_raw("../simulations/opamp_dc_tb.raw")
 
 v_out = Signal.get_signal("v(out)")
 

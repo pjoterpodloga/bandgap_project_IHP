@@ -77,7 +77,7 @@ class Signal:
         x = cls.__x_axis
         
         if (at_range is not None):
-            if (len(at_range) is not 2):
+            if (len(at_range) != 2):
                 raise("at_range should have only 2 values.")
             if (at_range[0] > at_range[1]):
                 Warning("at_range[1] should be bigger than ar_range[0]. Values has been swaped")
@@ -301,18 +301,18 @@ def __parse_ngspice_raw_ascii(filepath):
             line = line.strip().split(":")[1]
             sweep_axis_values.append(float(line))
 
-        if (line.startswith("No. Points:") and n_of_points is 0):
+        if (line.startswith("No. Points:") and n_of_points == 0):
             n_of_points = int(line.strip().split(":")[1])
 
         if (line.startswith("Flags:") and not flags):
             found_flags = line[6:].strip().split(",")
             flags.extend(found_flags)
 
-        if (line.startswith("Variables:") and var_line_index is 0):
+        if (line.startswith("Variables:") and var_line_index == 0):
             var_line_index = i
             continue
 
-        if (line.startswith("Values:") and val_line_index is 0):
+        if (line.startswith("Values:") and val_line_index == 0):
             val_line_index = i
             continue
 

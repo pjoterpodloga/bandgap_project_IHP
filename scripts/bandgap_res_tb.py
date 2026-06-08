@@ -1,6 +1,6 @@
 from ngspice_utils import *
 
-parse_ngspice_raw("/Users/pjoter/Documents/magisterka/share_folder/master/simulations/bandgap_res_temp_tb.pex.raw")
+parse_ngspice_raw("../simulations/bandgap_res_temp_tb.raw")
 
 v_ref = Signal.get_signal("v(v_ref)")
 i_dr = Signal.get_signal("i(v.x1.vidr)")
@@ -62,7 +62,7 @@ plt.xlabel("Temperatura [$\\degree$C]")
 plt.show()
 
 
-parse_ngspice_raw("/Users/pjoter/Documents/magisterka/share_folder/master/simulations/vp-sweep.pex.out")
+parse_ngspice_raw("../simulations/vp-sweep.out")
 
 v_ref = Signal.get_signal("v(v_ref)")
 

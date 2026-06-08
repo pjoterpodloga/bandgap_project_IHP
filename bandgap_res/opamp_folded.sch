@@ -226,7 +226,7 @@ C {sg13cmos5l_pr/sg13_hv_nmos.sym} 120 -430 0 0 {name=M1
 l=0.9u
 w=1.2u
 ng=1
-m=4
+m=6
 model=sg13_hv_nmos
 spiceprefix=X
 }
@@ -234,7 +234,7 @@ C {sg13cmos5l_pr/sg13_hv_nmos.sym} 360 -430 0 1 {name=M2
 l=0.9u
 w=1.2u
 ng=1
-m=4
+m=6
 model=sg13_hv_nmos
 spiceprefix=X
 }

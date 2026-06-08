@@ -20,12 +20,12 @@ N 520 -220 520 -190 {lab=vrd}
 N 520 -130 520 0 {lab=gd}
 N 360 0 520 0 {lab=gd}
 N 200 0 300 0 {lab=gd}
-N 40 -220 40 -190 {lab=vrd}
+N 40 -220 40 -190 {lab=vd}
 N 40 -130 40 0 {lab=gd}
 N 40 0 140 0 {lab=gd}
 N 0 0 40 0 {lab=gd}
-N 200 -220 200 -90 {lab=vrd}
-N 40 -220 200 -220 {lab=vrd}
+N 200 -220 200 -90 {lab=vd}
+N 40 -220 200 -220 {lab=vd}
 N 280 -620 320 -620 {lab=vg}
 N 280 -620 280 -560 {lab=vg}
 N 240 -620 280 -620 {lab=vg}
@@ -58,22 +58,22 @@ N 860 -130 860 -0 {lab=gd}
 N 360 -690 660 -690 {lab=vp}
 N 790 -560 790 -340 {lab=vg}
 N 660 -690 660 -410 {lab=vp}
+N 360 -370 360 -220 {lab=vrd}
+N 200 -310 200 -220 {lab=vd}
+N 860 -240 920 -240 {lab=vref}
+N 860 -310 860 -240 {lab=vref}
+N 370 -310 580 -310 {lab=vd}
+N 370 -320 370 -310 {lab=vd}
+N 350 -320 370 -320 {lab=vd}
+N 350 -320 350 -310 {lab=vd}
+N 200 -310 350 -310 {lab=vd}
+N 360 -370 580 -370 {lab=vrd}
 N 360 -590 360 -540 {lab=#net2}
+N 360 -480 360 -370 {lab=vrd}
+N 200 -480 200 -310 {lab=vd}
 N 200 -590 200 -540 {lab=#net3}
 N 860 -480 860 -370 {lab=#net4}
 N 860 -690 860 -540 {lab=vp}
-N 360 -370 360 -220 {lab=vrd}
-N 200 -310 200 -220 {lab=vrd}
-N 860 -240 920 -240 {lab=vref}
-N 860 -310 860 -240 {lab=vref}
-N 370 -310 580 -310 {lab=vrd}
-N 370 -320 370 -310 {lab=vrd}
-N 350 -320 370 -320 {lab=vrd}
-N 350 -320 350 -310 {lab=vrd}
-N 200 -310 350 -310 {lab=vrd}
-N 200 -480 200 -310 {lab=vrd}
-N 360 -370 580 -370 {lab=vrd}
-N 360 -480 360 -370 {lab=vrd}
 C {sg13cmos5l_pr/pnpMPA.sym} 180 -60 0 0 {name=Q1
 model=pnpMPA
 spiceprefix=X
@@ -114,9 +114,9 @@ m=10
 model=sg13_hv_pmos
 spiceprefix=X
 }
-C {vsource.sym} 200 -510 0 0 {name=Vid value=0 savecurrent=true}
-C {vsource.sym} 360 -510 0 0 {name=Vidr value=0 savecurrent=true}
-C {vsource.sym} 860 -510 0 0 {name=Viref value=0 savecurrent=true}
+C {vsource.sym} 200 -510 0 0 {name=Vid value=0 savecurrent=true lvs_ignore=True}
+C {vsource.sym} 360 -510 0 0 {name=Vidr value=0 savecurrent=true lvs_ignore=True}
+C {vsource.sym} 860 -510 0 0 {name=Viref value=0 savecurrent=true lvs_ignore=True}
 C {sg13cmos5l_pr/sg13_hv_pmos.sym} 840 -340 0 0 {name=M3
 l=0.9u
 w=3.6u
@@ -126,43 +126,43 @@ model=sg13_hv_pmos
 spiceprefix=X
 }
 C {opin.sym} 920 -240 0 0 {name=p2 lab=vref}
-C {sg13cmos5l_pr/rppd.sym} 360 -160 0 0 {name=R1
-w=1.5e-6
-l=2e-6
-model=rppd
-body=sub!
-spiceprefix=X
-b=2
-m=1
-value="expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )"
-}
 C {sg13cmos5l_pr/rppd.sym} 520 -160 0 0 {name=R2
-w=0.5e-6
-l=2e-6
+w=2e-6
+l=88e-6
 model=rppd
 body=sub!
 spiceprefix=X
-b=7
+b=0
 m=1
 value="expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )"
 }
 C {sg13cmos5l_pr/rppd.sym} 40 -160 0 0 {name=R3
-w=0.5e-6
-l=2e-6
+w=2e-6
+l=88e-6
 model=rppd
 body=sub!
 spiceprefix=X
-b=7
+b=0
 m=1
 value="expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )"
 }
 C {sg13cmos5l_pr/rppd.sym} 860 -160 0 0 {name=R4
-w=0.5e-6
-l=2e-6
+w=2e-6
+l=88e-6
 model=rppd
 body=sub!
 spiceprefix=X
-b=7
+b=0
+m=1
+value="expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )"
+}
+C {sg13cmos5l_pr/rppd.sym} 360 -160 0 0 {name=R5
+w=4.5e-6
+l=30e-6
+model=rppd
+body=sub!
+spiceprefix=X
+b=0
 m=1
 value="expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )"
 }
