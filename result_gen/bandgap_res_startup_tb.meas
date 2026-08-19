@@ -1,0 +1,5 @@
+# bandgap_res_core_temp_vp_sweep_tb
+# meas_name     |   min_spec    |   max_spec    |   unit    |   prefix  |   description
+v_ref               1.19            1.21            V           None        "Output reference voltage at end of sim"
+t_setup_bg          None            500             s           n           "Settling time of bandgap output voltage"
+t_setup_gm          None            500             s           n           "Settling time of bias circuit"

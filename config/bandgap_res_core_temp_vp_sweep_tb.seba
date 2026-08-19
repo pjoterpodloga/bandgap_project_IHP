@@ -1,0 +1,10 @@
+
+NAME           bandgap_res_core_temp_vp_sweep_tb
+
+CONTROL        bandgap_res_core_temp_vp_sweep_tb.control
+TESTBENCH      bandgap_res_core_temp_vp_sweep_tb.sch
+CORNERS        bandgap_res_core_temp_vp_sweep_tb.corner_gen
+SCRIPT         bandgap_res_core_temp_vp_sweep_tb.py
+MEAS           bandgap_res_core_temp_vp_sweep_tb.meas
+
+PLOT           plot.template.plt

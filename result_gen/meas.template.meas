@@ -1,0 +1,5 @@
+# Example for meas file
+# meas_name    |   min_spec    |   max_spec    |   unit    |   prefix  |   description
+vout               400             800             V           m           "Output voltage"
+iout               75              125             A           u           "Output current"
+duty_cycle         0.45            0.55            ratio       None        "Output duty cycle"

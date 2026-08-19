@@ -1,0 +1,9 @@
+* Title: Control file for const_gm_bias_startup_tb.spice
+
+.control
+run
+save all
+set filetype=ascii
+write const_gm_bias_startup_tb.raw all
+
+.endc

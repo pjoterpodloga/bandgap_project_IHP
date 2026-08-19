@@ -1,0 +1,113 @@
+** sch_path: /foss/designs/test/testbench/opamp_dc_tb.sch
+**.subckt opamp_dc_tb
+EINP inp net1 in gd 0.5
+EINM inm net1 in gd -0.5
+C1 out gd xcload
+VGD gd 0 0
+VP vp gd xvp
+VSUB gd sub! 0
+VIN in gd DC xvid
+VCM net1 gd 'xvp/2'
+Vibias bias net2 0
+.save i(vibias)
+x1 vp inp inm out bias gd opamp_folded
+x2 vp net2 gd const_gm_bias
+**** begin user architecture code
+
+
+.lib cornerMOShv.lib mos_tt
+.lib cornerRES.lib res_typ
+
+.param xvp=3.3
+.param xvid=0
+.param xcload=1p
+
+.param xtemp=25
+
+.save v(in)
+.save v(out)
+.save i(vibias)
+.save v(vp)
+
+.temp 'xtemp'
+.dc VIN -10m 10m 10u
+
+.option rshunt=1e12
+.option gmin=1e-12
+
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  /foss/designs/master/bandgap_res/opamp_folded.sym # of pins=6
+** sym_path: /foss/designs/master/bandgap_res/opamp_folded.sym
+** sch_path: /foss/designs/master/bandgap_res/opamp_folded.sch
+.subckt opamp_folded vp inp inm out bias gd
+*.ipin bias
+*.opin out
+*.ipin vp
+*.ipin inp
+*.ipin inm
+*.ipin gd
+XM1 inp_fold inp pair_com gd sg13_hv_nmos w=2.4u l=0.9u ng=1 m=10
+XM2 inm_fold inm pair_com gd sg13_hv_nmos w=2.4u l=0.9u ng=1 m=10
+XM3 tele_p tele_g gd gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=2
+XM4 tele_m tele_g gd gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=2
+XM5 tele_g bias2 tele_p gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=2
+XM6 out bias2 tele_m gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=2
+XM7 tele_g bias3 inp_fold vp sg13_hv_pmos w=3.6u l=0.9u ng=1 m=2
+XM8 out bias3 inm_fold vp sg13_hv_pmos w=3.6u l=0.9u ng=1 m=2
+XM9 inp_fold bias4 vp vp sg13_hv_pmos w=3.6u l=0.9u ng=1 m=4
+XM10 inm_fold bias4 vp vp sg13_hv_pmos w=3.6u l=0.9u ng=1 m=4
+XM11 pair_com bias gd gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=4
+XM12 bias bias gd gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=2
+XM13 bias4 bias gd gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=2
+XM14 bias4 bias4 vp vp sg13_hv_pmos w=3.6u l=0.9u ng=1 m=2
+XM15 bias3 bias gd gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=2
+XM16 bias3 bias3 net2 vp sg13_hv_pmos w=3.6u l=0.9u ng=1
+XM17 net2 bias3 vp vp sg13_hv_pmos w=3.6u l=0.9u ng=1
+XM18 net1 bias2 gd gd sg13_hv_nmos w=1.2u l=0.9u ng=1
+XM19 bias2 bias2 net1 gd sg13_hv_nmos w=1.2u l=0.9u ng=1
+XM20 bias2 bias4 vp vp sg13_hv_pmos w=3.6u l=0.9u ng=1 m=4
+XM21 pair_com gd gd gd sg13_hv_nmos w=2.4u l=0.9u ng=1 m=2
+XM22 bias2 gd gd gd sg13_hv_nmos w=1.2u l=0.9u ng=1
+XM23 gd gd gd gd sg13_hv_nmos w=1.2u l=0.9u ng=1
+XM24 vp vp vp vp sg13_hv_pmos w=3.6u l=0.9u ng=1
+XM25 vp vp bias3 vp sg13_hv_pmos w=3.6u l=0.9u ng=1
+.ends
+
+
+* expanding   symbol:  /foss/designs/test/circuit/const_gm_bias.sym # of pins=3
+** sym_path: /foss/designs/test/circuit/const_gm_bias.sym
+** sch_path: /foss/designs/test/circuit/const_gm_bias.sch
+.subckt const_gm_bias vp ibias gd
+*.opin ibias
+*.ipin vp
+*.ipin gd
+x1 vp ibias gd vr const_gm_bias_core
+XRbias vr gd gd rppd w=1.2e-6 l=11.7e-6 m=1 b=0
+.ends
+
+
+* expanding   symbol:  /foss/designs/test/circuit/const_gm_bias_core.sym # of pins=4
+** sym_path: /foss/designs/test/circuit/const_gm_bias_core.sym
+** sch_path: /foss/designs/test/circuit/const_gm_bias_core.sch
+.subckt const_gm_bias_core vp ibias gd res
+*.ipin vp
+*.ipin gd
+*.opin ibias
+*.opin res
+XM1 net1 nbias gd gd sg13_hv_nmos w=0.6u l=2u ng=1 m=2
+XM3 net2 nbias res gd sg13_hv_nmos w=0.6u l=2u ng=1 m=4
+XM7 pbias pbias net3 vp sg13_hv_pmos w=0.6u l=2u ng=1 m=2
+XM5 nbias pbias net4 vp sg13_hv_pmos w=0.6u l=2u ng=1 m=2
+XM2 nbias nbias net1 gd sg13_hv_nmos w=0.6u l=2u ng=1 m=2
+XM4 pbias nbias net2 gd sg13_hv_nmos w=0.6u l=2u ng=1 m=4
+XM8 net3 pbias vp vp sg13_hv_pmos w=0.6u l=2u ng=1 m=2
+XM6 net4 pbias vp vp sg13_hv_pmos w=0.6u l=2u ng=1 m=2
+XM11 ibias pbias net5 vp sg13_hv_pmos w=0.6u l=2u ng=1 m=2
+XM12 net5 pbias vp vp sg13_hv_pmos w=0.6u l=2u ng=1 m=2
+.ends
+
+.GLOBAL sub!
+.end

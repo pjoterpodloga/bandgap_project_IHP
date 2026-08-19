@@ -1,0 +1,13 @@
+
+NAME            const_gm_bias_startup_tb_pex
+
+CONTROL         const_gm_bias_startup_tb.control
+TESTBENCH       const_gm_bias_startup_tb.sch
+#NETLIST         const_gm_bias_startup_tb.spice
+CORNERS         const_gm_bias_startup_tb.corner_gen
+SCRIPT          const_gm_bias_startup_tb_pex.py
+MEAS            const_gm_bias_startup_tb.meas
+
+PLOT            plot.template.plt
+
+EXTRACTION      const_gm_bias.pex.spice

@@ -1,0 +1,10 @@
+
+NAME           const_gm_bias_tune_tb
+
+CONTROL        const_gm_bias_tune_tb.control
+TESTBENCH      const_gm_bias_tune_tb.sch
+CORNERS        const_gm_bias_tune_tb.corner_gen
+SCRIPT         const_gm_bias_tune_tb.py
+MEAS           const_gm_bias_tune_tb.meas
+
+PLOT           plot.template.plt

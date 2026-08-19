@@ -1,0 +1,36 @@
+from ngspice_utils import *
+
+import pandas as pd
+import glob
+
+raw_files = glob.glob("*.raw_*")
+
+i_res_result = [0.]*len(raw_files)
+r_res_result = [0.]*len(raw_files)
+i_out_result = [0.]*len(raw_files)
+
+for rw in raw_files:
+
+    corner_number = int(rw.split("_")[-1])
+
+    print()
+    print(f"Corner #{corner_number}")
+
+    parse_ngspice_raw(rw)
+
+    i_bias = Signal.get_signal("i(vibias)")
+    v_nbias = Signal.get_signal("v(xdut.const_gm_bias_core_0.nbias)")
+    v_pbias = Signal.get_signal("v(xdut.const_gm_bias_core_0.pbias)")
+    v_stup = Signal.get_signal("v(xdut.const_gm_bias_core_0.stup)")
+
+    plt.figure()
+    plt.plot(Signal.get_x_axis(), i_bias)
+    plt.plot(Signal.get_x_axis(), v_nbias)
+    plt.plot(Signal.get_x_axis(), v_pbias)
+    plt.plot(Signal.get_x_axis(), v_stup)
+    plt.legend(["ibias", "nbias", "pbias", "stup"])
+    plt.savefig(f"plot_{corner_number}.png")
+
+data = {"i_res": i_res_result, "r_res": r_res_result, "i_out": i_out_result}
+df = pd.DataFrame(data)
+df.to_csv("measure.csv")

@@ -1,0 +1,103 @@
+** sch_path: /foss/designs/test/testbench/bandgap_res_temp_tb.sch
+**.subckt bandgap_res_temp_tb
+x1 vp bias v_ref gd bandgap_res
+VGD gd 0 0
+VP vp gd xvp
+.save i(vp)
+VSUB gd sub! 0
+Vibias net1 bias 0
+.save i(vibias)
+I0 vp net1 'xibias'
+C1 v_ref gd 1p
+**** begin user architecture code
+
+
+.lib cornerMOSlv.lib mos_tt
+.lib cornerMOShv.lib mos_tt
+.lib cornerRES.lib res_typ
+.lib cornerDIO.lib dio_tt
+.lib cornerPNP.lib typ
+
+.param xvp=3.3
+.param xibias=10u
+
+.param xtemp=25
+
+.probe alli
+.probe v(x1)
+.probe isub(x1)
+.save all
+
+.temp 'xtemp'
+.dc temp -50 125 0.1
+
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  /foss/designs/master/bandgap_res/bandgap_res.sym # of pins=4
+** sym_path: /foss/designs/master/bandgap_res/bandgap_res.sym
+** sch_path: /foss/designs/master/bandgap_res/bandgap_res.sch
+.subckt bandgap_res vp ibias vref gd
+*.ipin gd
+*.ipin vp
+*.ipin ibias
+*.opin vref
+XQ1 gd gd vd pnpMPA a=4e-12 p=8e-06
+XQ2 gd gd net1 pnpMPA a=4e-12 p=8e-06 m=8
+x1 vp vrd vd vg ibias gd opamp_folded
+XM2 net2 vg vp vp sg13_hv_pmos w=3.6u l=0.9u ng=1 m=10
+XM1 net3 vg vp vp sg13_hv_pmos w=3.6u l=0.9u ng=1 m=10
+Vid net3 vd 0
+.save i(vid)
+Vidr net2 vrd 0
+.save i(vidr)
+Viref vp net4 0
+.save i(viref)
+XM3 vref vg net4 vp sg13_hv_pmos w=3.6u l=0.9u ng=1 m=10
+XR2 vrd gd sub! rppd w=2e-6 l=88e-6 m=1 b=0
+XR3 vd gd sub! rppd w=2e-6 l=88e-6 m=1 b=0
+XR4 vref gd sub! rppd w=2e-6 l=88e-6 m=1 b=0
+XR5 vrd net1 sub! rppd w=4.7e-6 l=30e-6 m=1 b=0
+.ends
+
+
+* expanding   symbol:  /foss/designs/master/bandgap_res/opamp_folded.sym # of pins=6
+** sym_path: /foss/designs/master/bandgap_res/opamp_folded.sym
+** sch_path: /foss/designs/master/bandgap_res/opamp_folded.sch
+.subckt opamp_folded vp inp inm out bias gd
+*.ipin bias
+*.opin out
+*.ipin vp
+*.ipin inp
+*.ipin inm
+*.ipin gd
+XM1 inp_fold inp pair_com gd sg13_hv_nmos w=2.4u l=0.9u ng=1 m=10
+XM2 inm_fold inm pair_com gd sg13_hv_nmos w=2.4u l=0.9u ng=1 m=10
+XM3 tele_p tele_g gd gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=2
+XM4 tele_m tele_g gd gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=2
+XM5 tele_g bias2 tele_p gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=2
+XM6 out bias2 tele_m gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=2
+XM7 tele_g bias3 inp_fold vp sg13_hv_pmos w=3.6u l=0.9u ng=1 m=2
+XM8 out bias3 inm_fold vp sg13_hv_pmos w=3.6u l=0.9u ng=1 m=2
+XM9 inp_fold bias4 vp vp sg13_hv_pmos w=3.6u l=0.9u ng=1 m=4
+XM10 inm_fold bias4 vp vp sg13_hv_pmos w=3.6u l=0.9u ng=1 m=4
+XM11 pair_com bias gd gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=4
+XM12 bias bias gd gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=2
+XM13 bias4 bias gd gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=2
+XM14 bias4 bias4 vp vp sg13_hv_pmos w=3.6u l=0.9u ng=1 m=2
+XM15 bias3 bias gd gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=2
+XM16 bias3 bias3 net2 vp sg13_hv_pmos w=3.6u l=0.9u ng=1
+XM17 net2 bias3 vp vp sg13_hv_pmos w=3.6u l=0.9u ng=1
+XM18 net1 bias2 gd gd sg13_hv_nmos w=1.2u l=0.9u ng=1
+XM19 bias2 bias2 net1 gd sg13_hv_nmos w=1.2u l=0.9u ng=1
+XM20 bias2 bias4 vp vp sg13_hv_pmos w=3.6u l=0.9u ng=1 m=4
+XM21 pair_com gd gd gd sg13_hv_nmos w=2.4u l=0.9u ng=1 m=2
+XM22 bias2 gd gd gd sg13_hv_nmos w=1.2u l=0.9u ng=1
+XM23 gd gd gd gd sg13_hv_nmos w=1.2u l=0.9u ng=1
+XM24 vp vp vp vp sg13_hv_pmos w=3.6u l=0.9u ng=1
+XM25 vp vp bias3 vp sg13_hv_pmos w=3.6u l=0.9u ng=1
+.ends
+
+.GLOBAL sub!
+.end

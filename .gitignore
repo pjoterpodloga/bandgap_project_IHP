@@ -1,0 +1,16 @@
+# Default SEBA .gitignore file
+
+config/logs/
+pex/
+logs/
+tmp/
+tmp/simulations/
+tmp/layout_flatten_gds/
+tmp/layout_lvs/
+tmp/layout_drc/
+tmp/pex_tmp/
+backup/
+
+config/logs/*.log
+corners/*.list
+

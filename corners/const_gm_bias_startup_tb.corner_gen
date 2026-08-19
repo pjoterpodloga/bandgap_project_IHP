@@ -1,0 +1,7 @@
+# Corner gen file for const_gm_bias_startup_tb
+lib cornerMOShv.lib
+lib cornerRES.lib
+param  xvp
+param  xtemp
+corner_gen [mos_tt] [res_typ] [3.3] [25]
+corner_gen [mos_ss,mos_sf,mos_fs,mos_ff] [res_bcs,res_wcs] [2.97, 3.63] [-50, 125]

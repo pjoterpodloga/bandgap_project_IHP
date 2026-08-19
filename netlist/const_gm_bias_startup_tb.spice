@@ -1,0 +1,81 @@
+** sch_path: /foss/designs/test/testbench/const_gm_bias_startup_tb.sch
+**.subckt const_gm_bias_startup_tb
+VP vp gd DC='xvp' PWL(0 0 'xdelay' 0 'xdelay+1n' 'xvp')
+VGD gd 0 0
+VSUB gd sub! 0
+xdut vp ibias gd const_gm_bias
+VIBIAS ibias gd 0
+**** begin user architecture code
+
+
+.lib cornerMOShv.lib mos_tt
+.lib cornerRES.lib res_typ
+
+.include cap_mfringe.lib
+
+.param xvp=3.3
+.param xtemp=25
+.param xdelay=200n
+
+.save v(ibias)
+.save i(vibias)
+.save v(nbias)
+
+.save v(xdut.xgm_core.nbias)
+.save v(xdut.xgm_core.pbias)
+.save v(xdut.xgm_core.stup)
+
+.save v(xdut.const_gm_bias_core_0.pbias)
+.save v(xdut.const_gm_bias_core_0.nbias)
+.save v(xdut.const_gm_bias_core_0.stup)
+
+.temp 'xtemp'
+
+.options rshunt=1G
+
+.tran 500p 2.2u
+
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  /foss/designs/test/circuit/const_gm_bias.sym # of pins=3
+** sym_path: /foss/designs/test/circuit/const_gm_bias.sym
+** sch_path: /foss/designs/test/circuit/const_gm_bias.sch
+.subckt const_gm_bias vp ibias gd
+*.opin ibias
+*.ipin vp
+*.ipin gd
+xgm_core vp ibias gd vr const_gm_bias_core
+XRbias vr gd gd rppd w=1.2e-6 l=11.7e-6 m=1 b=0
+XR2 gd net1 gd rppd w=1.2e-6 l=3.9e-6 m=1 b=0
+XR3 net1 gd gd rppd w=1.2e-6 l=1.3e-6 m=1 b=0
+.ends
+
+
+* expanding   symbol:  /foss/designs/test/circuit/const_gm_bias_core.sym # of pins=4
+** sym_path: /foss/designs/test/circuit/const_gm_bias_core.sym
+** sch_path: /foss/designs/test/circuit/const_gm_bias_core.sch
+.subckt const_gm_bias_core vp ibias gd res
+*.ipin vp
+*.ipin gd
+*.opin ibias
+*.opin res
+XM1 net5 nbias gd gd sg13_hv_nmos w=0.6u l=2u ng=1 m=2
+XM3 net6 nbias res gd sg13_hv_nmos w=0.6u l=2u ng=1 m=4
+XM7 pbias pbias net1 vp sg13_hv_pmos w=0.6u l=2u ng=1 m=2
+XM5 nbias pbias net2 vp sg13_hv_pmos w=0.6u l=2u ng=1 m=2
+XM2 nbias nbias net5 gd sg13_hv_nmos w=0.6u l=2u ng=1 m=2
+XM4 pbias nbias net6 gd sg13_hv_nmos w=0.6u l=2u ng=1 m=4
+XM8 net1 pbias vp vp sg13_hv_pmos w=0.6u l=2u ng=1 m=2
+XM6 net2 pbias vp vp sg13_hv_pmos w=0.6u l=2u ng=1 m=2
+XM9 ibias pbias net3 vp sg13_hv_pmos w=0.6u l=2u ng=1 m=2
+XM10 net3 pbias vp vp sg13_hv_pmos w=0.6u l=2u ng=1 m=2
+XM11 net4 gd vp vp sg13_hv_pmos w=0.6u l=4.38u ng=1
+XM13 stup nbias gd gd sg13_hv_nmos w=0.6u l=2u ng=1 m=4
+XM14 pbias stup gd gd sg13_hv_nmos w=0.6u l=2u ng=1 m=2
+XM12 stup gd net4 vp sg13_hv_pmos w=0.6u l=4.38u ng=1
+.ends
+
+.GLOBAL sub!
+.end

@@ -1,0 +1,26 @@
+[
+  {
+    "name": "i_res",
+    "max": "None",
+    "min": "None",
+    "unit": "A",
+    "prefix": "u",
+    "description": "Resisitor biasing current"
+  },
+  {
+    "name": "r_res",
+    "max": "None",
+    "min": "None",
+    "unit": "Ohm",
+    "prefix": "k",
+    "description": "Biasing resistor"
+  },
+  {
+    "name": "i_out",
+    "max": "20",
+    "min": "5",
+    "unit": "A",
+    "prefix": "u",
+    "description": "Output bias current"
+  }
+]

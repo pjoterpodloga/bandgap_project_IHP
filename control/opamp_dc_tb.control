@@ -1,0 +1,6 @@
+.control
+run
+save all
+set filetype=ascii
+write opamp_dc_tb.raw all
+.endc

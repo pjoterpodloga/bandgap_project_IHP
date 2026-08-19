@@ -1,0 +1,9 @@
+* Title: Control file for const_gm_bias_tune_tb.spice
+
+.control
+run
+save all
+set filetype=ascii
+write const_gm_bias_temp_sweep_tb.raw all
+
+.endc

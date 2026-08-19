@@ -1,0 +1,10 @@
+
+NAME           opamp_dc_tb
+
+CONTROL        opamp_dc_tb.control
+TESTBENCH      opamp_dc_tb.sch
+CORNERS        opamp_dc_tb.corner_gen
+SCRIPT         opamp_dc_tb.py
+MEAS           opamp_dc_tb.meas
+
+PLOT           plot.template.plt

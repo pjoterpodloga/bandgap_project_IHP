@@ -1,0 +1,6 @@
+.control
+run
+save all
+set filetype=ascii
+write bandgap_res_temp_tb.raw all
+.endc

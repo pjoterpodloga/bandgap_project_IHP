@@ -1,0 +1,11 @@
+# Const_gm_bias_temp_sweep_tb
+# meas_name    |    min_spec    |   max_spec    |   unit    |   prefix  |   description
+i_bias_m45          5               20              A           u           "Output biasing current @-45C"
+i_bias_m25          5               20              A           u           "Output biasing current @-25C"
+i_bias_0            5               20              A           u           "Output biasing current @0C"
+i_bias_p25          5               20              A           u           "Output biasing current @25C"
+i_bias_p50          5               20              A           u           "Output biasing current @50C"
+i_bias_p75          5               20              A           u           "Output biasing current @75C"
+i_bias_p100         5               20              A           u           "Output biasing current @100C"
+i_bias_p120         5               20              A           u           "Output biasing current @120C"
+i_bias_spread       None            10              A           u           "Output biasing curret spread"

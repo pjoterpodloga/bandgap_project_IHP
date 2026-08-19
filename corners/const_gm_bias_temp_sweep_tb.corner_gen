@@ -1,0 +1,7 @@
+# Corner gen file for const_gm_bias_temp_sweep
+lib cornerMOShv.lib
+lib cornerRES.lib
+lib cornerPNP.lib
+param  xvp
+corner_gen [mos_tt] [res_typ] [typ] [3.3]
+corner_gen [mos_ss,mos_sf,mos_fs,mos_ff] [res_bcs,res_wcs] [bcs,wcs] [2.97, 3.63]

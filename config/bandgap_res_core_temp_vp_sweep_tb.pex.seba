@@ -1,0 +1,13 @@
+
+NAME            bandgap_res_core_temp_vp_sweep_tb_pex
+
+CONTROL         bandgap_res_core_temp_vp_sweep_tb.control
+#NETLIST         bandgap_res_core_temp_vp_sweep_tb.spice
+TESTBENCH       bandgap_res_core_temp_vp_sweep_tb.sch
+CORNERS         bandgap_res_core_temp_vp_sweep_tb.corner_gen
+SCRIPT          bandgap_res_core_temp_vp_sweep_tb.py
+MEAS            bandgap_res_core_temp_vp_sweep_tb.meas
+
+PLOT            plot.template.plt
+
+EXTRACTION      bandgap_res_core.pex.spice

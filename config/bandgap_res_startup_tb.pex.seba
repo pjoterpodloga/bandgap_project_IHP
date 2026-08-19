@@ -1,0 +1,13 @@
+
+NAME            bandgap_res_startup_tb_pex
+
+CONTROL         bandgap_res_startup_tb.control
+TESTBENCH       bandgap_res_startup_tb.sch
+#NETLIST         bandgap_res_startup_tb.spice
+CORNERS         bandgap_res_startup_tb.corner_gen
+SCRIPT          bandgap_res_startup_tb_pex.py
+MEAS            bandgap_res_startup_tb.meas
+
+PLOT            plot.template.plt
+
+EXTRACTION      bandgap_res_core_wrapper.pex.spice

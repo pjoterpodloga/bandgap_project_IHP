@@ -1,0 +1,26 @@
+[
+  {
+    "name": "v_ref",
+    "max": "1.21",
+    "min": "1.19",
+    "unit": "V",
+    "prefix": "None",
+    "description": "Output reference voltage at end of sim"
+  },
+  {
+    "name": "t_setup_bg",
+    "max": "500",
+    "min": "None",
+    "unit": "s",
+    "prefix": "n",
+    "description": "Settling time of bandgap output voltage"
+  },
+  {
+    "name": "t_setup_gm",
+    "max": "500",
+    "min": "None",
+    "unit": "s",
+    "prefix": "n",
+    "description": "Settling time of bias circuit"
+  }
+]

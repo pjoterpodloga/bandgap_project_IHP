@@ -1,0 +1,121 @@
+** sch_path: /foss/designs/test/testbench/bandgap_res_core_temp_vp_sweep_tb.sch
+**.subckt bandgap_res_core_temp_vp_sweep_tb
+VGD gd 0 0
+VP vp gd xvp
+.save i(vp)
+VSUB gd sub! 0
+Vibias net1 bias 0
+.save i(vibias)
+I0 vp net1 'xibias'
+C1 v_ref gd 1p
+x1 vp bias v_ref gd start_up vd8 vd1 bandgap_res_core
+x2 vd1 vd8 gd bandgap_res_diodes
+* noconn start_up
+**** begin user architecture code
+
+
+.lib cornerMOShv.lib mos_tt
+.lib cornerRES.lib res_typ
+.lib cornerPNP.lib typ
+
+.param xvp=3.3
+.param xibias=10u
+
+.param xtemp=25
+
+*.probe alli
+*.probe v(x1)
+.probe isub(x1)
+.save v(v_ref)
+.save v(vp)
+.save v(start_up)
+.save v(x1.vdr)
+.save v(vd1)
+.save v(vd8)
+.save i(vp)
+.save i(vibias)
+*.save all
+
+.options rshunt=1G
+
+.temp 'xtemp'
+.dc temp -50 125 0.1
+
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  /foss/designs/test/circuit/bandgap_res_core.sym # of pins=7
+** sym_path: /foss/designs/test/circuit/bandgap_res_core.sym
+** sch_path: /foss/designs/test/circuit/bandgap_res_core.sch
+.subckt bandgap_res_core vp ibias vref gd start_up d8 d1
+*.ipin gd
+*.ipin vp
+*.ipin ibias
+*.opin vref
+*.opin d1
+*.opin d8
+*.ipin start_up
+XM2 net1 start_up vp vp sg13_hv_pmos w=3.6u l=0.9u ng=1 m=10
+XM1 d1 start_up vp vp sg13_hv_pmos w=3.6u l=0.9u ng=1 m=10
+XM3 vref start_up vp vp sg13_hv_pmos w=3.6u l=0.9u ng=1 m=10
+XR2 net1 gd gd rppd w=2e-6 l=100e-6 m=1 b=0
+XR3 d1 gd gd rppd w=2e-6 l=100e-6 m=1 b=0
+XR4 vref gd gd rppd w=2e-6 l=100e-6 m=1 b=0
+XR1 net1 d8 gd rppd w=5.8e-6 l=42e-6 m=1 b=0
+x1 vp net1 d1 start_up ibias gd opamp_folded
+XR5 gd net2 gd rppd w=2e-6 l=37.5e-6 m=1 b=0
+XR6 net2 gd gd rppd w=2e-6 l=12.5e-6 m=1 b=0
+XR7 gd gd gd rppd w=2e-6 l=12.5e-6 m=1 b=0
+.ends
+
+
+* expanding   symbol:  /foss/designs/test/circuit/bandgap_res_diodes.sym # of pins=3
+** sym_path: /foss/designs/test/circuit/bandgap_res_diodes.sym
+** sch_path: /foss/designs/test/circuit/bandgap_res_diodes.sch
+.subckt bandgap_res_diodes d1 d8 gd
+*.ipin gd
+*.ipin d1
+*.ipin d8
+XQ1 gd gd d1 pnpMPA a=4e-12 p=8e-06
+XQ2 gd gd d8 pnpMPA a=4e-12 p=8e-06 m=8
+.ends
+
+
+* expanding   symbol:  /foss/designs/test/circuit/opamp_folded.sym # of pins=6
+** sym_path: /foss/designs/test/circuit/opamp_folded.sym
+** sch_path: /foss/designs/test/circuit/opamp_folded.sch
+.subckt opamp_folded vp inp inm out bias gd
+*.ipin bias
+*.opin out
+*.ipin vp
+*.ipin inp
+*.ipin inm
+*.ipin gd
+XM1 inp_fold inp pair_com gd sg13_hv_nmos w=2.4u l=0.9u ng=1 m=10
+XM2 inm_fold inm pair_com gd sg13_hv_nmos w=2.4u l=0.9u ng=1 m=10
+XM3 tele_p tele_g gd gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=2
+XM4 tele_m tele_g gd gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=2
+XM5 tele_g bias2 tele_p gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=2
+XM6 out bias2 tele_m gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=2
+XM7 tele_g bias3 inp_fold vp sg13_hv_pmos w=3.6u l=0.9u ng=1 m=2
+XM8 out bias3 inm_fold vp sg13_hv_pmos w=3.6u l=0.9u ng=1 m=2
+XM9 inp_fold bias4 vp vp sg13_hv_pmos w=3.6u l=0.9u ng=1 m=4
+XM10 inm_fold bias4 vp vp sg13_hv_pmos w=3.6u l=0.9u ng=1 m=4
+XM11 pair_com bias gd gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=4
+XM12 bias bias gd gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=2
+XM13 bias4 bias gd gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=2
+XM14 bias4 bias4 vp vp sg13_hv_pmos w=3.6u l=0.9u ng=1 m=2
+XM15 bias3 bias gd gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=2
+XM16 bias3 bias3 net2 vp sg13_hv_pmos w=3.6u l=0.9u ng=1
+XM17 net2 bias3 vp vp sg13_hv_pmos w=3.6u l=0.9u ng=1
+XM18 net1 bias2 gd gd sg13_hv_nmos w=1.2u l=0.9u ng=1
+XM19 bias2 bias2 net1 gd sg13_hv_nmos w=1.2u l=0.9u ng=1
+XM20 bias2 bias4 vp vp sg13_hv_pmos w=3.6u l=0.9u ng=1 m=4
+XM21 pair_com gd gd gd sg13_hv_nmos w=2.4u l=0.9u ng=1 m=2
+XM22 bias2 gd gd gd sg13_hv_nmos w=1.2u l=0.9u ng=1
+XM23 vp vp bias3 vp sg13_hv_pmos w=3.6u l=0.9u ng=1
+.ends
+
+.GLOBAL sub!
+.end

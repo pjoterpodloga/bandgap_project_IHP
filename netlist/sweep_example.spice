@@ -1,0 +1,44 @@
+.lib cornerMOSlv.lib mos_tt
+.lib cornerMOShv.lib mos_tt
+.lib cornerRES.lib res_typ
+.lib cornerDIO.lib dio_tt
+.lib cornerPNP.lib typ
+
+.param xvp=3.3
+
+.param xtemp=25
+
+.probe alli
+.probe v(x1)
+.probe isub(x1)
+.save all
+
+.temp 25
+.dc temp -50 125 0.1
+
+
+
+
+.control
+let vp_start = 2.97
+let vp_stop = 3.6
+let vp_delta = 0.01
+let vp_act = vp_start
+
+run
+save all
+set filetype=ascii
+write bandgap_res_temp_tb.raw all
+
+shell 'rm -rf vp-sweep.out'
+shell 'echo Sweep:vp-sweep >> vp-sweep.out'
+
+while vp_act < vp_stop
+	alter vp $&vp_act
+	run
+	set appendwrite
+	shell 'echo Sweep value:$&vp_act >> vp-sweep.out'
+	write vp-sweep.out v(v_ref) v(vp)
+	let vp_act = vp_act + vp_delta
+end
+.endc

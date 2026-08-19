@@ -1,0 +1,11 @@
+# Example for corner generation file
+lib    cornerMOSlv.lib
+lib    cornerMOShv.lib
+param  xvp
+param  xtemp
+param  xvbg
+param  xfreq
+corner_gen [mos_tt]==[mos_tt] [3.3] [25] [0.8] [100e6]
+corner_gen [mos_ss,mos_sf,mos_fs,mos_ff]==[mos_ss,mos_sf,mos_fs,mos_ff] [2.97,3.6] [-50,125] [0.79,0.81] [100e6]
+corner_gen [mos_tt]==[mos_tt] [3.3] [25] [0.8] [200e6]
+corner_gen [mos_ss,mos_sf,mos_fs,mos_ff]==[mos_ss,mos_sf,mos_fs,mos_ff] [2.97,3.6] [-50,125] [0.79,0.81] [200e6]
