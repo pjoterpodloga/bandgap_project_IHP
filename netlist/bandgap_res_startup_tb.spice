@@ -59,7 +59,7 @@ C2 vbias gd 1f
 *.opin d8
 *.opin vbias
 xbandgap vp vbias vref gd d8 d1 bandgap_res_core
-xbias vp vbias gd su_gm const_gm_bias
+xbias vp vbias gd const_gm_bias
 xstartup vp su_gm gd d1 bandgap_res_startup
 .ends
 
@@ -100,16 +100,17 @@ XR7 gd gd gd rppd w=2e-6 l=12.5e-6 m=1 b=0
 .ends
 
 
-* expanding   symbol:  /foss/designs/test/circuit/const_gm_bias.sym # of pins=4
+* expanding   symbol:  /foss/designs/test/circuit/const_gm_bias.sym # of pins=3
 ** sym_path: /foss/designs/test/circuit/const_gm_bias.sym
 ** sch_path: /foss/designs/test/circuit/const_gm_bias.sch
-.subckt const_gm_bias vp ibias gd startup
+.subckt const_gm_bias vp ibias gd
 *.opin ibias
 *.ipin vp
 *.ipin gd
-*.ipin startup
-xgm_core vp ibias gd vr startup const_gm_bias_core
+xgm_core vp ibias gd vr const_gm_bias_core
 XRbias vr gd gd rppd w=1.2e-6 l=11.7e-6 m=1 b=0
+XR2 gd net1 gd rppd w=1.2e-6 l=3.9e-6 m=1 b=0
+XR3 net1 gd gd rppd w=1.2e-6 l=1.3e-6 m=1 b=0
 .ends
 
 
@@ -164,25 +165,22 @@ XM23 vp vp bias3 vp sg13_hv_pmos w=3.6u l=0.9u ng=1
 .ends
 
 
-* expanding   symbol:  /foss/designs/test/circuit/const_gm_bias_core.sym # of pins=5
+* expanding   symbol:  /foss/designs/test/circuit/const_gm_bias_core.sym # of pins=4
 ** sym_path: /foss/designs/test/circuit/const_gm_bias_core.sym
 ** sch_path: /foss/designs/test/circuit/const_gm_bias_core.sch
-.subckt const_gm_bias_core vp ibias gd res startup
+.subckt const_gm_bias_core vp ibias gd res
 *.ipin vp
 *.ipin gd
 *.opin ibias
 *.opin res
-*.ipin startup
-XM1 net2 startup gd gd sg13_hv_nmos w=0.6u l=2u ng=1 m=2
-XM3 net3 startup res gd sg13_hv_nmos w=0.6u l=2u ng=1 m=4
-XM7 net1 net1 net4 vp sg13_hv_pmos w=0.6u l=2u ng=1 m=2
-XM5 startup net1 net5 vp sg13_hv_pmos w=0.6u l=2u ng=1 m=2
-XM2 startup startup net2 gd sg13_hv_nmos w=0.6u l=2u ng=1 m=2
-XM4 net1 startup net3 gd sg13_hv_nmos w=0.6u l=2u ng=1 m=4
-XM8 net4 net1 vp vp sg13_hv_pmos w=0.6u l=2u ng=1 m=2
-XM6 net5 net1 vp vp sg13_hv_pmos w=0.6u l=2u ng=1 m=2
-XM11 ibias net1 net6 vp sg13_hv_pmos w=0.6u l=2u ng=1 m=2
-XM12 net6 net1 vp vp sg13_hv_pmos w=0.6u l=2u ng=1 m=2
+XM1 nbias nbias gd gd sg13_hv_nmos w=0.6u l=2u ng=1 m=2
+XM2 pbias nbias res gd sg13_hv_nmos w=0.6u l=2u ng=1 m=4
+XM4 pbias pbias vp vp sg13_hv_pmos w=0.6u l=2u ng=1 m=2
+XM3 nbias pbias vp vp sg13_hv_pmos w=0.6u l=2u ng=1 m=2
+XM5 ibias pbias vp vp sg13_hv_pmos w=0.6u l=2u ng=1 m=2
+XM7 stup gd vp vp sg13_hv_pmos w=0.6u l=4u ng=1
+XM6 stup nbias gd gd sg13_hv_nmos w=0.6u l=2u ng=1 m=4
+XM8 pbias stup gd gd sg13_hv_nmos w=0.6u l=2u ng=1 m=2
 .ends
 
 .GLOBAL sub!
