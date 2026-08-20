@@ -25,7 +25,7 @@ C {lab_wire.sym} 100 -150 0 0 {name=p2 sig_type=std_logic lab=gd}
 C {vsource.sym} 140 -100 0 0 {name=VSUB value=0 savecurrent=false}
 C {sg13cmos5l_pr/sub.sym} 140 -40 0 0 {name=l1 lab=sub!}
 C {lab_wire.sym} 40 -260 3 1 {name=p3 sig_type=std_logic lab=vp}
-C {netlist.sym} 10 -840 0 0 {name=s1
+C {netlist.sym} 10 -900 0 0 {name=s1
 value=
 "
 .lib cornerMOShv.lib mos_tt
@@ -48,6 +48,10 @@ value=
 .save v(xdut.const_gm_bias_core_0.pbias)
 .save v(xdut.const_gm_bias_core_0.nbias)
 .save v(xdut.const_gm_bias_core_0.stup)
+
+.save v(xdut.pbias)
+.save v(xdut.nbias)
+.save v(xdut.stup)
 
 .temp 'xtemp'
 

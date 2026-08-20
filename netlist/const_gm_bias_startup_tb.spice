@@ -29,6 +29,10 @@ VIBIAS ibias gd 0
 .save v(xdut.const_gm_bias_core_0.nbias)
 .save v(xdut.const_gm_bias_core_0.stup)
 
+.save v(xdut.pbias)
+.save v(xdut.nbias)
+.save v(xdut.stup)
+
 .temp 'xtemp'
 
 .options rshunt=1G
@@ -61,20 +65,14 @@ XR3 net1 gd gd rppd w=1.2e-6 l=1.3e-6 m=1 b=0
 *.ipin gd
 *.opin ibias
 *.opin res
-XM1 net5 nbias gd gd sg13_hv_nmos w=0.6u l=2u ng=1 m=2
-XM3 net6 nbias res gd sg13_hv_nmos w=0.6u l=2u ng=1 m=4
-XM7 pbias pbias net1 vp sg13_hv_pmos w=0.6u l=2u ng=1 m=2
-XM5 nbias pbias net2 vp sg13_hv_pmos w=0.6u l=2u ng=1 m=2
-XM2 nbias nbias net5 gd sg13_hv_nmos w=0.6u l=2u ng=1 m=2
-XM4 pbias nbias net6 gd sg13_hv_nmos w=0.6u l=2u ng=1 m=4
-XM8 net1 pbias vp vp sg13_hv_pmos w=0.6u l=2u ng=1 m=2
-XM6 net2 pbias vp vp sg13_hv_pmos w=0.6u l=2u ng=1 m=2
-XM9 ibias pbias net3 vp sg13_hv_pmos w=0.6u l=2u ng=1 m=2
-XM10 net3 pbias vp vp sg13_hv_pmos w=0.6u l=2u ng=1 m=2
-XM11 net4 gd vp vp sg13_hv_pmos w=0.6u l=4.38u ng=1
-XM13 stup nbias gd gd sg13_hv_nmos w=0.6u l=2u ng=1 m=4
-XM14 pbias stup gd gd sg13_hv_nmos w=0.6u l=2u ng=1 m=2
-XM12 stup gd net4 vp sg13_hv_pmos w=0.6u l=4.38u ng=1
+XM1 nbias nbias gd gd sg13_hv_nmos w=0.6u l=2u ng=1 m=2
+XM2 pbias nbias res gd sg13_hv_nmos w=0.6u l=2u ng=1 m=4
+XM4 pbias pbias vp vp sg13_hv_pmos w=0.6u l=2u ng=1 m=2
+XM3 nbias pbias vp vp sg13_hv_pmos w=0.6u l=2u ng=1 m=2
+XM5 ibias pbias vp vp sg13_hv_pmos w=0.6u l=2u ng=1 m=2
+XM7 stup gd vp vp sg13_hv_pmos w=0.6u l=4u ng=1
+XM6 stup nbias gd gd sg13_hv_nmos w=0.6u l=2u ng=1 m=4
+XM8 pbias stup gd gd sg13_hv_nmos w=0.6u l=2u ng=1 m=2
 .ends
 
 .GLOBAL sub!
