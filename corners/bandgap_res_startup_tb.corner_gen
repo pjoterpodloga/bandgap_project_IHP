@@ -1,4 +1,4 @@
-# Corner gen file for bandgap_res_core_temp_vp_sweep_tb
+# Corner gen file for bandgap_res_startup_tb
 lib cornerMOShv.lib
 lib cornerRES.lib
 lib cornerPNP.lib
