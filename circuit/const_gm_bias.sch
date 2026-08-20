@@ -5,6 +5,11 @@ V {}
 S {}
 F {}
 E {}
+L 4 10 10 10 310 {}
+L 4 10 310 240 310 {}
+L 4 240 10 240 310 {}
+L 4 10 10 240 10 {}
+T {Dummy} 20 20 0 0 0.4 0.4 {}
 N 80 -280 80 -260 {lab=vp}
 N 80 -20 180 -20 {lab=gd}
 N 180 -40 180 -20 {lab=gd}
@@ -14,8 +19,8 @@ N 240 -200 280 -200 {lab=ibias}
 N -0 -280 80 -280 {lab=vp}
 N -0 -20 80 -20 {lab=gd}
 N 80 150 80 190 {lab=#net1}
-N 80 250 80 280 {lab=#net2}
-N 80 60 80 90 {lab=xxx}
+N 80 250 80 280 {lab=gd}
+N 80 60 80 90 {lab=gd}
 C {/foss/designs/test/circuit/const_gm_bias_core.sym} 40 -200 0 0 {name=xgm_core}
 C {sg13cmos5l_pr/rppd.sym} 180 -70 0 0 {name=Rbias
 w=1.2e-6
