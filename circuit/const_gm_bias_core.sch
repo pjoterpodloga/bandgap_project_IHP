@@ -18,7 +18,6 @@ N 690 -560 690 -530 {lab=vp}
 N 910 -500 990 -500 {lab=vp}
 N 830 -500 870 -500 {lab=pbias}
 N 910 -560 910 -530 {lab=vp}
-N 830 -450 830 -400 {lab=pbias}
 N 690 -560 910 -560 {lab=vp}
 N 670 -40 690 -40 {lab=res}
 N 690 -90 690 -40 {lab=res}
@@ -38,12 +37,12 @@ N 160 -560 530 -560 {lab=vp}
 N 340 0 530 0 {lab=gd}
 N 250 -220 310 -220 {lab=stup}
 N 340 -280 340 -250 {lab=pbias}
-N 340 -280 520 -280 {lab=pbias}
+N 420 -280 520 -280 {lab=pbias}
 N 520 -290 520 -280 {lab=pbias}
 N 520 -290 540 -290 {lab=pbias}
 N 540 -290 540 -280 {lab=pbias}
 N 540 -280 690 -280 {lab=pbias}
-N 240 -350 530 -350 {lab=nbias}
+N 420 -350 530 -350 {lab=nbias}
 N 240 -350 240 -80 {lab=nbias}
 N 530 -90 530 0 {lab=gd}
 N 340 -190 340 0 {lab=gd}
@@ -92,12 +91,28 @@ N 680 -460 700 -460 {lab=pbias}
 N 700 -460 700 -450 {lab=pbias}
 N 700 -450 830 -450 {lab=pbias}
 N 830 -500 830 -450 {lab=pbias}
-N 910 -370 910 -320 {lab=ibias}
+N 910 -90 910 -40 {lab=ibias}
 N 160 -400 240 -400 {lab=vp}
 N 160 -470 160 -430 {lab=#net6}
 N 40 -400 120 -400 {lab=gd}
 N 40 -500 40 -400 {lab=gd}
 N 160 -370 160 -220 {lab=stup}
+N 910 -220 990 -220 {lab=vp}
+N 910 -120 990 -120 {lab=vp}
+N 910 -190 910 -150 {lab=#net7}
+N 830 -120 870 -120 {lab=pbias}
+N 830 -220 830 -120 {lab=pbias}
+N 830 -220 870 -220 {lab=pbias}
+N 830 -400 830 -220 {lab=pbias}
+N 830 -450 830 -400 {lab=pbias}
+N 910 -370 910 -250 {lab=#net8}
+N 910 -40 930 -40 {lab=ibias}
+N 420 -300 420 -280 {lab=pbias}
+N 340 -280 420 -280 {lab=pbias}
+N 420 -300 440 -300 {lab=pbias}
+N 420 -350 420 -330 {lab=nbias}
+N 240 -350 420 -350 {lab=nbias}
+N 420 -330 440 -330 {lab=nbias}
 C {lab_wire.sym} 770 -120 0 0 {name=p15 sig_type=std_logic lab=gd}
 C {lab_wire.sym} 450 -120 0 1 {name=p16 sig_type=std_logic lab=gd}
 C {sg13cmos5l_pr/sg13_hv_nmos.sym} 550 -120 0 1 {name=M1
@@ -135,21 +150,21 @@ model=sg13_hv_pmos
 spiceprefix=X
 }
 C {lab_wire.sym} 990 -500 0 0 {name=p24 sig_type=std_logic lab=vp}
-C {sg13cmos5l_pr/sg13_hv_pmos.sym} 890 -500 0 0 {name=M10
+C {sg13cmos5l_pr/sg13_hv_pmos.sym} 890 -500 0 0 {name=M12
 l=2u
 w=0.6u
 ng=1
-m=2
+m=1
 model=sg13_hv_pmos
 spiceprefix=X
 }
 C {ipin.sym} 0 -560 0 0 {name=p1 lab=vp}
 C {ipin.sym} 0 0 0 0 {name=p2 lab=gd}
-C {opin.sym} 910 -320 1 0 {name=p3 lab=ibias}
+C {opin.sym} 930 -40 0 0 {name=p3 lab=ibias}
 C {opin.sym} 670 -40 2 0 {name=p11 lab=res
 }
 C {lab_wire.sym} 240 -500 0 0 {name=p4 sig_type=std_logic lab=vp}
-C {sg13cmos5l_pr/sg13_hv_pmos.sym} 140 -500 0 0 {name=M13
+C {sg13cmos5l_pr/sg13_hv_pmos.sym} 140 -500 0 0 {name=M15
 l=4.38u
 w=0.6u
 ng=1
@@ -158,7 +173,7 @@ model=sg13_hv_pmos
 spiceprefix=X
 }
 C {lab_wire.sym} 80 -80 0 1 {name=p5 sig_type=std_logic lab=gd}
-C {sg13cmos5l_pr/sg13_hv_nmos.sym} 180 -80 0 1 {name=M11
+C {sg13cmos5l_pr/sg13_hv_nmos.sym} 180 -80 0 1 {name=M13
 l=2u
 w=0.6u
 ng=1
@@ -167,7 +182,7 @@ model=sg13_hv_nmos
 spiceprefix=X
 }
 C {lab_wire.sym} 420 -220 0 0 {name=p6 sig_type=std_logic lab=gd}
-C {sg13cmos5l_pr/sg13_hv_nmos.sym} 320 -220 0 0 {name=M800
+C {sg13cmos5l_pr/sg13_hv_nmos.sym} 320 -220 0 0 {name=M16
 l=2u
 w=0.6u
 ng=1
@@ -176,8 +191,6 @@ model=sg13_hv_nmos
 spiceprefix=X
 }
 C {lab_wire.sym} 220 -220 0 0 {name=p10 sig_type=std_logic lab=stup}
-C {lab_wire.sym} 420 -280 0 0 {name=p8 sig_type=std_logic lab=pbias}
-C {lab_wire.sym} 420 -350 0 0 {name=p9 sig_type=std_logic lab=nbias}
 C {lab_wire.sym} 770 -220 0 0 {name=p7 sig_type=std_logic lab=gd}
 C {lab_wire.sym} 450 -220 0 1 {name=p12 sig_type=std_logic lab=gd}
 C {sg13cmos5l_pr/sg13_hv_nmos.sym} 550 -220 0 1 {name=M2
@@ -197,11 +210,11 @@ model=sg13_hv_nmos
 spiceprefix=X
 }
 C {lab_wire.sym} 990 -400 0 0 {name=p13 sig_type=std_logic lab=vp}
-C {sg13cmos5l_pr/sg13_hv_pmos.sym} 890 -400 0 0 {name=M9
+C {sg13cmos5l_pr/sg13_hv_pmos.sym} 890 -400 0 0 {name=M11
 l=2u
 w=0.6u
 ng=1
-m=2
+m=1
 model=sg13_hv_pmos
 spiceprefix=X
 }
@@ -224,7 +237,7 @@ model=sg13_hv_pmos
 spiceprefix=X
 }
 C {lab_wire.sym} 240 -400 0 0 {name=p18 sig_type=std_logic lab=vp}
-C {sg13cmos5l_pr/sg13_hv_pmos.sym} 140 -400 0 0 {name=M12
+C {sg13cmos5l_pr/sg13_hv_pmos.sym} 140 -400 0 0 {name=M14
 l=4.38u
 w=0.6u
 ng=1
@@ -232,3 +245,23 @@ m=1
 model=sg13_hv_pmos
 spiceprefix=X
 }
+C {lab_wire.sym} 990 -220 0 0 {name=p19 sig_type=std_logic lab=vp}
+C {sg13cmos5l_pr/sg13_hv_pmos.sym} 890 -220 0 0 {name=M10
+l=2u
+w=0.6u
+ng=1
+m=1
+model=sg13_hv_pmos
+spiceprefix=X
+}
+C {lab_wire.sym} 990 -120 0 0 {name=p20 sig_type=std_logic lab=vp}
+C {sg13cmos5l_pr/sg13_hv_pmos.sym} 890 -120 0 0 {name=M9
+l=2u
+w=0.6u
+ng=1
+m=1
+model=sg13_hv_pmos
+spiceprefix=X
+}
+C {opin.sym} 440 -330 0 0 {name=p8 lab=nbias}
+C {opin.sym} 440 -300 0 0 {name=p9 lab=pbias}

@@ -24,7 +24,6 @@ N 760 -190 760 -160 {lab=gd}
 N 580 -30 580 0 {lab=gd}
 N 620 -190 620 -150 {lab=vd8}
 N 560 -190 560 -150 {lab=vd1}
-N 440 -250 520 -250 {lab=start_up}
 C {vsource.sym} 150 -70 0 0 {name=VGD value=0 savecurrent=false}
 C {vsource.sym} 150 -210 0 0 {name=VP value=xvp savecurrent=true}
 C {vsource.sym} 240 -70 0 0 {name=VSUB value=0 savecurrent=false}
@@ -39,14 +38,16 @@ C {lab_wire.sym} 510 -270 0 0 {name=p2 sig_type=std_logic lab=bias}
 C {isource.sym} 440 -420 0 0 {name=I0 value='xibias'}
 C {lab_wire.sym} 440 -460 3 1 {name=p1 sig_type=std_logic lab=vp}
 C {lab_wire.sym} 660 -360 3 1 {name=p3 sig_type=std_logic lab=vp}
-C {netlist.sym} 10 -790 0 0 {name=s1 
+C {netlist.sym} 0 -860 0 0 {name=s1 
 value="
 .lib cornerMOShv.lib mos_tt
 .lib cornerRES.lib res_typ
 .lib cornerPNP.lib typ
 
+.param i_bias_p25 = 'variant'
+
 .param xvp=3.3
-.param xibias=10u
+.param xibias='i_bias_p25'
 
 .param xtemp=25
 
@@ -79,5 +80,3 @@ C {/foss/designs/test/circuit/bandgap_res_diodes.sym} 560 -150 0 0 {name=x2}
 C {lab_wire.sym} 580 -20 3 0 {name=p4 sig_type=std_logic lab=gd}
 C {lab_wire.sym} 620 -180 3 0 {name=p5 sig_type=std_logic lab=vd8}
 C {lab_wire.sym} 560 -180 3 0 {name=p9 sig_type=std_logic lab=vd1}
-C {lab_wire.sym} 510 -250 2 1 {name=p10 sig_type=std_logic lab=start_up}
-C {noconn.sym} 440 -250 0 0 {name=l2}

@@ -14,9 +14,15 @@ N 140 -150 140 -130 {lab=gd}
 N 40 -260 40 -230 {lab=vp}
 N 410 -70 410 -40 {lab=gd}
 N 410 -320 410 -290 {lab=vp}
-N 540 -180 600 -180 {lab=ibias}
-N 600 -180 600 -160 {lab=ibias}
-N 600 -100 600 -40 {lab=gd}
+N 540 -220 660 -220 {lab=ibias}
+N 660 -220 660 -170 {lab=ibias}
+N 660 -110 660 -40 {lab=gd}
+N 540 -200 580 -200 {lab=nbias}
+N 580 -200 580 -170 {lab=nbias}
+N 580 -110 580 -40 {lab=gd}
+N 760 -110 760 -40 {lab=gd}
+N 540 -240 760 -240 {lab=#net1}
+N 760 -240 760 -170 {lab=#net1}
 C {vsource.sym} 40 -200 0 0 {name=VP savecurrent=false
 value="DC='xvp' PWL(0 0 'xdelay' 0 'xdelay+1n' 'xvp')"}
 C {vsource.sym} 40 -100 0 0 {name=VGD value=0 savecurrent=false}
@@ -61,8 +67,22 @@ value=
 "
 }
 C {/foss/designs/test/circuit/const_gm_bias.sym} 320 -90 0 0 {name=xdut}
-C {vsource.sym} 600 -130 0 0 {name=VIBIAS value=0 savecurrent=false}
+C {vsource.sym} 660 -140 0 0 {name=VIBIAS value=0 savecurrent=false}
 C {lab_wire.sym} 410 -40 3 0 {name=p4 sig_type=std_logic lab=gd}
-C {lab_wire.sym} 600 -40 3 0 {name=p5 sig_type=std_logic lab=gd}
+C {lab_wire.sym} 580 -40 3 0 {name=p5 sig_type=std_logic lab=gd}
 C {lab_wire.sym} 410 -320 3 1 {name=p6 sig_type=std_logic lab=vp}
-C {lab_wire.sym} 590 -180 0 0 {name=p7 sig_type=std_logic lab=ibias}
+C {lab_wire.sym} 560 -220 0 1 {name=p7 sig_type=std_logic lab=ibias}
+C {capa.sym} 580 -140 0 0 {name=C1
+m=1
+value=1p
+footprint=1206
+device="ceramic capacitor"}
+C {lab_wire.sym} 760 -40 3 0 {name=p8 sig_type=std_logic lab=gd}
+C {capa.sym} 760 -140 0 0 {name=C2
+m=1
+value=1p
+footprint=1206
+device="ceramic capacitor"}
+C {lab_wire.sym} 660 -40 3 0 {name=p9 sig_type=std_logic lab=gd}
+C {lab_wire.sym} 560 -200 0 1 {name=p10 sig_type=std_logic lab=nbias}
+C {lab_wire.sym} 560 -240 0 1 {name=p11 sig_type=std_logic lab=pbias}

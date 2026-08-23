@@ -63,7 +63,7 @@ value=
 
 .options rshunt=1G
 
-.tran 1n 2.2u uic
+.tran 1n 5.2u uic
 "}
 C {vsource.sym} 30 -160 0 0 {name=VGD value=0 savecurrent=false}
 C {lab_wire.sym} 30 -110 3 1 {name=p4 sig_type=std_logic lab=0}
