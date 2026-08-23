@@ -32,12 +32,11 @@ for rw in raw_files:
     #i_dr = Signal.get_signal("i(v.x1.vidr)")
     #i_ref = Signal.get_signal("i(v.x1.viref)")
     v_vd = Signal.get_signal("v(vd1)")
-    v_vrd = Signal.get_signal("v(start_up)")
-    v_vg = Signal.get_signal("v(x1.vg)")
+    #v_vg = Signal.get_signal("v(x1.vg)")
 
-    v_gate_min = Signal.ymin(v_vg)
-    v_gate_max = Signal.ymax(v_vg)
-    v_gate_avg = np.average(v_vg)
+    #v_gate_min = Signal.ymin(v_vg)
+    #v_gate_max = Signal.ymax(v_vg)
+    #v_gate_avg = np.average(v_vg)
 
     #deriv_i_dr = Signal.derivative(i_dr)
     #deriv_i_dr = Signal.value_at(deriv_i_dr, 25)
@@ -80,9 +79,9 @@ for rw in raw_files:
     v_ref_sub_result[corner_number] = v_ref_sub
     v_ref_avg_result[corner_number] = v_ref_avg
     v_ref_at_25C_result[corner_number] = v_ref_at_25C
-    v_gate_min_result[corner_number] = v_gate_min
-    v_gate_max_result[corner_number] = v_gate_max
-    v_gate_avg_result[corner_number] = v_gate_avg
+    #v_gate_min_result[corner_number] = v_gate_min
+    #v_gate_max_result[corner_number] = v_gate_max
+    #v_gate_avg_result[corner_number] = v_gate_avg
     #i_ref_max_result[corner_number] = i_ref_max
     #i_ref_min_result[corner_number] = i_ref_min
     #i_ref_avg_result[corner_number] = i_ref_avg

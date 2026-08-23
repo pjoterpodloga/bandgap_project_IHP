@@ -66,6 +66,6 @@ data = {"i_bias_m45": i_bias_m45_result,
         "i_bias_p75" : i_bias_p75_result,
         "i_bias_p100" : i_bias_p100_result,
         "i_bias_p120" : i_bias_p120_result,
-        "i_bias_spread_result" : i_bias_spread_result}
+        "i_bias_spread" : i_bias_spread_result}
 df = pd.DataFrame(data)
 df.to_csv("measure.csv")

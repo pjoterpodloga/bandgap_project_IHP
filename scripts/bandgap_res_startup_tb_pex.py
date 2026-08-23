@@ -25,11 +25,7 @@ for rw in raw_files:
     v_ref = Signal.get_signal("v(out)")
     v_d1 = Signal.get_signal("v(vd1)")
     v_d8 = Signal.get_signal("v(vd8)")
-    v_vcap = Signal.get_signal("v(xdut.bandgap_res_startup_0.vcap)")
-    v_vr = Signal.get_signal("v(xdut.const_gm_bias_0.vr)")
     v_bias = Signal.get_signal("v(vbias)")
-    v_gm_startup = Signal.get_signal("v(xdut.const_gm_bias_0.startup)")
-    #v_vg = Signal.get_signal("v(xdut.xbandgap.vg)")
 
     vp = Signal.value_at(v_vp, tend_meas)
 
@@ -38,8 +34,8 @@ for rw in raw_files:
 
     t_delay = Signal.cross(v_vp, vp/2)
 
-    t_ready_bg = Signal.cross(v_ref, v_ref_tend*0.95)
-    t_ready_gm = Signal.cross(v_bias, v_bias_tend*0.95)
+    t_ready_bg = Signal.value_at(v_ref, v_ref_tend*0.95)
+    t_ready_gm = Signal.value_at(v_bias, v_bias_tend*0.95)
 
     t_setup_bg = t_ready_bg - t_delay
     t_setup_gm = t_ready_gm - t_delay
@@ -54,15 +50,12 @@ for rw in raw_files:
     plt.plot(Signal.get_x_axis()*1e6, v_bias)
     plt.plot(Signal.get_x_axis()*1e6, v_d1)
     plt.plot(Signal.get_x_axis()*1e6, v_d8)
-    plt.plot(Signal.get_x_axis()*1e6, v_vcap)
-    plt.plot(Signal.get_x_axis()*1e6, v_vr)
-    plt.plot(Signal.get_x_axis()*1e6, v_gm_startup)
     plt.axhline(y=1.2, color='g', linestyle='--')
     plt.grid(True)
     plt.title("Symulacja rozruchu układu napięcia referencyjnego w czasie")
     plt.ylabel("Napięcie [V]")
     plt.xlabel("Czas [us]")
-    plt.legend(["vp", "v_ref", "bias", "d1", "d8", "cap", "vr", "startup"])
+    plt.legend(["vp", "v_ref", "bias", "d1", "d8"])
     plt.savefig(f"plot_{corner_number}.png")
 
 

@@ -36,8 +36,10 @@ VIBIAS out gd 0
 *.opin ibias
 *.ipin vp
 *.ipin gd
-x1 vp ibias gd vr const_gm_bias_core
-XRbias vr gd sub! rppd w=1.5e-6 l=15e-6 m=1 b=0
+xgm_core vp ibias gd vr const_gm_bias_core
+XRbias vr gd gd rppd w=1.2e-6 l=11.7e-6 m=1 b=0
+XR2 gd net1 gd rppd w=1.2e-6 l=3.9e-6 m=1 b=0
+XR3 net1 gd gd rppd w=1.2e-6 l=1.3e-6 m=1 b=0
 .ends
 
 
@@ -49,20 +51,22 @@ XRbias vr gd sub! rppd w=1.5e-6 l=15e-6 m=1 b=0
 *.ipin gd
 *.opin ibias
 *.opin res
-XM1 net1 nbias gd gd sg13_hv_nmos w=1.2u l=2u ng=1
-XM3 net2 nbias res gd sg13_hv_nmos w=1.2u l=2u ng=1 m=4
-XM7 pbias pbias net3 vp sg13_hv_pmos w=1.2u l=2u ng=1
-XM5 nbias pbias net4 vp sg13_hv_pmos w=1.2u l=2u ng=1
-XM2 nbias nbias net1 gd sg13_hv_nmos w=1.2u l=2u ng=1
-XM4 pbias nbias net2 gd sg13_hv_nmos w=1.2u l=2u ng=1 m=4
-XM8 net3 pbias vp vp sg13_hv_pmos w=1.2u l=2u ng=1
-XM6 net4 pbias vp vp sg13_hv_pmos w=1.2u l=2u ng=1
-XM9 ibias pbias net5 vp sg13_hv_pmos w=0.6u l=2u ng=1
-XM10 net5 pbias vp vp sg13_hv_pmos w=0.6u l=2u ng=1
-XM11 vp pbias vp vp sg13_hv_pmos w=0.6u l=2u ng=1
-XM12 vp pbias vp vp sg13_hv_pmos w=0.6u l=2u ng=1
-XM13 vp pbias vp vp sg13_hv_pmos w=0.6u l=2u ng=1
-XM14 vp pbias vp vp sg13_hv_pmos w=0.6u l=2u ng=1
+XM1 net1 nbias gd gd sg13_hv_nmos w=0.6u l=2u ng=1 m=2
+XM3 net2 nbias res gd sg13_hv_nmos w=0.6u l=2u ng=1 m=4
+XM8 net5 pbias vp vp sg13_hv_pmos w=0.6u l=2u ng=1 m=2
+XM6 net4 pbias vp vp sg13_hv_pmos w=0.6u l=2u ng=1 m=2
+XM12 net3 pbias vp vp sg13_hv_pmos w=0.6u l=2u ng=1
+XM15 net6 gd vp vp sg13_hv_pmos w=0.6u l=4.38u ng=1
+XM13 stup nbias gd gd sg13_hv_nmos w=0.6u l=2u ng=1 m=4
+XM16 pbias stup gd gd sg13_hv_nmos w=0.6u l=2u ng=1 m=2
+XM2 nbias nbias net1 gd sg13_hv_nmos w=0.6u l=2u ng=1 m=2
+XM4 pbias nbias net2 gd sg13_hv_nmos w=0.6u l=2u ng=1 m=4
+XM11 net8 pbias net3 vp sg13_hv_pmos w=0.6u l=2u ng=1
+XM7 pbias pbias net5 vp sg13_hv_pmos w=0.6u l=2u ng=1 m=2
+XM5 nbias pbias net4 vp sg13_hv_pmos w=0.6u l=2u ng=1 m=2
+XM14 stup gd net6 vp sg13_hv_pmos w=0.6u l=4.38u ng=1
+XM10 net7 pbias net8 vp sg13_hv_pmos w=0.6u l=2u ng=1
+XM9 ibias pbias net7 vp sg13_hv_pmos w=0.6u l=2u ng=1
 .ends
 
 .end

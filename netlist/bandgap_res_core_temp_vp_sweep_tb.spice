@@ -8,9 +8,8 @@ Vibias net1 bias 0
 .save i(vibias)
 I0 vp net1 'xibias'
 C1 v_ref gd 1p
-x1 vp bias v_ref gd start_up vd8 vd1 bandgap_res_core
+x1 vp bias v_ref gd vd8 vd1 bandgap_res_core
 x2 vd1 vd8 gd bandgap_res_diodes
-* noconn start_up
 **** begin user architecture code
 
 
@@ -18,8 +17,10 @@ x2 vd1 vd8 gd bandgap_res_diodes
 .lib cornerRES.lib res_typ
 .lib cornerPNP.lib typ
 
+.param i_bias_p25 = 'variant'
+
 .param xvp=3.3
-.param xibias=10u
+.param xibias='i_bias_p25'
 
 .param xtemp=25
 
@@ -29,7 +30,7 @@ x2 vd1 vd8 gd bandgap_res_diodes
 .save v(v_ref)
 .save v(vp)
 .save v(start_up)
-.save v(x1.vdr)
+.save v(x1.vg)
 .save v(vd1)
 .save v(vd8)
 .save i(vp)
@@ -45,25 +46,24 @@ x2 vd1 vd8 gd bandgap_res_diodes
 **** end user architecture code
 **.ends
 
-* expanding   symbol:  /foss/designs/test/circuit/bandgap_res_core.sym # of pins=7
+* expanding   symbol:  /foss/designs/test/circuit/bandgap_res_core.sym # of pins=6
 ** sym_path: /foss/designs/test/circuit/bandgap_res_core.sym
 ** sch_path: /foss/designs/test/circuit/bandgap_res_core.sch
-.subckt bandgap_res_core vp ibias vref gd start_up d8 d1
+.subckt bandgap_res_core vp ibias vref gd d8 d1
 *.ipin gd
 *.ipin vp
 *.ipin ibias
 *.opin vref
 *.opin d1
 *.opin d8
-*.ipin start_up
-XM2 net1 start_up vp vp sg13_hv_pmos w=3.6u l=0.9u ng=1 m=10
-XM1 d1 start_up vp vp sg13_hv_pmos w=3.6u l=0.9u ng=1 m=10
-XM3 vref start_up vp vp sg13_hv_pmos w=3.6u l=0.9u ng=1 m=10
+XM2 net1 vg vp vp sg13_hv_pmos w=3.6u l=0.9u ng=1 m=10
+XM1 d1 vg vp vp sg13_hv_pmos w=3.6u l=0.9u ng=1 m=10
+XM3 vref vg vp vp sg13_hv_pmos w=3.6u l=0.9u ng=1 m=10
 XR2 net1 gd gd rppd w=2e-6 l=100e-6 m=1 b=0
 XR3 d1 gd gd rppd w=2e-6 l=100e-6 m=1 b=0
 XR4 vref gd gd rppd w=2e-6 l=100e-6 m=1 b=0
 XR1 net1 d8 gd rppd w=5.8e-6 l=42e-6 m=1 b=0
-x1 vp net1 d1 start_up ibias gd opamp_folded
+xopamp vp net1 d1 vg ibias gd opamp_folded
 XR5 gd net2 gd rppd w=2e-6 l=37.5e-6 m=1 b=0
 XR6 net2 gd gd rppd w=2e-6 l=12.5e-6 m=1 b=0
 XR7 gd gd gd rppd w=2e-6 l=12.5e-6 m=1 b=0

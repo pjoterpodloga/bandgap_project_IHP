@@ -65,14 +65,22 @@ XR3 net1 gd gd rppd w=1.2e-6 l=1.3e-6 m=1 b=0
 *.ipin gd
 *.opin ibias
 *.opin res
-XM1 nbias nbias gd gd sg13_hv_nmos w=0.6u l=2u ng=1 m=2
-XM2 pbias nbias res gd sg13_hv_nmos w=0.6u l=2u ng=1 m=4
-XM4 pbias pbias vp vp sg13_hv_pmos w=0.6u l=2u ng=1 m=2
-XM3 nbias pbias vp vp sg13_hv_pmos w=0.6u l=2u ng=1 m=2
-XM5 ibias pbias vp vp sg13_hv_pmos w=0.6u l=2u ng=1 m=2
-XM7 stup gd vp vp sg13_hv_pmos w=0.6u l=4u ng=1
-XM6 stup nbias gd gd sg13_hv_nmos w=0.6u l=2u ng=1 m=4
-XM8 pbias stup gd gd sg13_hv_nmos w=0.6u l=2u ng=1 m=2
+XM1 net1 nbias gd gd sg13_hv_nmos w=0.6u l=2u ng=1 m=2
+XM3 net2 nbias res gd sg13_hv_nmos w=0.6u l=2u ng=1 m=4
+XM8 net5 pbias vp vp sg13_hv_pmos w=0.6u l=2u ng=1 m=2
+XM6 net4 pbias vp vp sg13_hv_pmos w=0.6u l=2u ng=1 m=2
+XM12 net3 pbias vp vp sg13_hv_pmos w=0.6u l=2u ng=1
+XM15 net6 gd vp vp sg13_hv_pmos w=0.6u l=4.38u ng=1
+XM13 stup nbias gd gd sg13_hv_nmos w=0.6u l=2u ng=1 m=4
+XM16 pbias stup gd gd sg13_hv_nmos w=0.6u l=2u ng=1 m=2
+XM2 nbias nbias net1 gd sg13_hv_nmos w=0.6u l=2u ng=1 m=2
+XM4 pbias nbias net2 gd sg13_hv_nmos w=0.6u l=2u ng=1 m=4
+XM11 net8 pbias net3 vp sg13_hv_pmos w=0.6u l=2u ng=1
+XM7 pbias pbias net5 vp sg13_hv_pmos w=0.6u l=2u ng=1 m=2
+XM5 nbias pbias net4 vp sg13_hv_pmos w=0.6u l=2u ng=1 m=2
+XM14 stup gd net6 vp sg13_hv_pmos w=0.6u l=4.38u ng=1
+XM10 net7 pbias net8 vp sg13_hv_pmos w=0.6u l=2u ng=1
+XM9 ibias pbias net7 vp sg13_hv_pmos w=0.6u l=2u ng=1
 .ends
 
 .GLOBAL sub!
