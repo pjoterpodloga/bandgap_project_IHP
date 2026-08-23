@@ -1,0 +1,74 @@
+[
+  {
+    "name": "i_bias_m45",
+    "max": "20",
+    "min": "5",
+    "unit": "A",
+    "prefix": "u",
+    "description": "Output biasing current @-45C"
+  },
+  {
+    "name": "i_bias_m25",
+    "max": "20",
+    "min": "5",
+    "unit": "A",
+    "prefix": "u",
+    "description": "Output biasing current @-25C"
+  },
+  {
+    "name": "i_bias_0",
+    "max": "20",
+    "min": "5",
+    "unit": "A",
+    "prefix": "u",
+    "description": "Output biasing current @0C"
+  },
+  {
+    "name": "i_bias_p25",
+    "max": "20",
+    "min": "5",
+    "unit": "A",
+    "prefix": "u",
+    "description": "Output biasing current @25C"
+  },
+  {
+    "name": "i_bias_p50",
+    "max": "20",
+    "min": "5",
+    "unit": "A",
+    "prefix": "u",
+    "description": "Output biasing current @50C"
+  },
+  {
+    "name": "i_bias_p75",
+    "max": "20",
+    "min": "5",
+    "unit": "A",
+    "prefix": "u",
+    "description": "Output biasing current @75C"
+  },
+  {
+    "name": "i_bias_p100",
+    "max": "20",
+    "min": "5",
+    "unit": "A",
+    "prefix": "u",
+    "description": "Output biasing current @100C"
+  },
+  {
+    "name": "i_bias_p120",
+    "max": "20",
+    "min": "5",
+    "unit": "A",
+    "prefix": "u",
+    "description": "Output biasing current @120C"
+  },
+  {
+    "name": "i_bias_spread",
+    "max": "10",
+    "min": "None",
+    "unit": "A",
+    "prefix": "u",
+    "description": "Output biasing curret spread"
+  }
+]

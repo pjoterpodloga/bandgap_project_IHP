@@ -1,0 +1,37 @@
+lib cornerMOShv.lib
+lib cornerRES.lib
+param xvp
+param xtemp
+0: mos_tt res_typ 3.3 25
+1: mos_ss res_bcs 2.97 -50
+2: mos_ss res_bcs 2.97 125
+3: mos_ss res_bcs 3.63 -50
+4: mos_ss res_bcs 3.63 125
+5: mos_ss res_wcs 2.97 -50
+6: mos_ss res_wcs 2.97 125
+7: mos_ss res_wcs 3.63 -50
+8: mos_ss res_wcs 3.63 125
+9: mos_sf res_bcs 2.97 -50
+10: mos_sf res_bcs 2.97 125
+11: mos_sf res_bcs 3.63 -50
+12: mos_sf res_bcs 3.63 125
+13: mos_sf res_wcs 2.97 -50
+14: mos_sf res_wcs 2.97 125
+15: mos_sf res_wcs 3.63 -50
+16: mos_sf res_wcs 3.63 125
+17: mos_fs res_bcs 2.97 -50
+18: mos_fs res_bcs 2.97 125
+19: mos_fs res_bcs 3.63 -50
+20: mos_fs res_bcs 3.63 125
+21: mos_fs res_wcs 2.97 -50
+22: mos_fs res_wcs 2.97 125
+23: mos_fs res_wcs 3.63 -50
+24: mos_fs res_wcs 3.63 125
+25: mos_ff res_bcs 2.97 -50
+26: mos_ff res_bcs 2.97 125
+27: mos_ff res_bcs 3.63 -50
+28: mos_ff res_bcs 3.63 125
+29: mos_ff res_wcs 2.97 -50
+30: mos_ff res_wcs 2.97 125
+31: mos_ff res_wcs 3.63 -50
+32: mos_ff res_wcs 3.63 125
