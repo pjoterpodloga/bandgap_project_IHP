@@ -1,0 +1,17 @@
+[
+    {
+        "testbench": "const_gm_bias_temp_sweep_tb",
+        "match": [
+            "xvp",
+            "cornerMOShv.lib",
+            "cornerRES.lib",
+            "cornerPNP.lib"
+        ],
+        "replace": [
+            []
+        ],
+        "insert": [
+            "i_bias_p25"
+        ]
+    }
+]
