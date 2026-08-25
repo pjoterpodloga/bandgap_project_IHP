@@ -105,7 +105,7 @@ spiceprefix=X
 C {opin.sym} 920 -240 0 0 {name=p2 lab=vref}
 C {sg13cmos5l_pr/rppd.sym} 520 -160 0 0 {name=R2
 w=2e-6
-l=100e-6
+l=105.52e-6
 model=rppd
 body=gd
 spiceprefix=X
@@ -115,7 +115,7 @@ value="expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-
 }
 C {sg13cmos5l_pr/rppd.sym} 40 -160 0 0 {name=R3
 w=2e-6
-l=100e-6
+l=105.52e-6
 model=rppd
 body=gd
 spiceprefix=X
@@ -125,7 +125,7 @@ value="expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-
 }
 C {sg13cmos5l_pr/rppd.sym} 860 -160 0 0 {name=R4
 w=2e-6
-l=100e-6
+l=105.52e-6
 model=rppd
 body=gd
 spiceprefix=X
@@ -135,7 +135,7 @@ value="expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-
 }
 C {sg13cmos5l_pr/rppd.sym} 360 -160 0 0 {name=R1
 w=5.8e-6
-l=42e-6
+l=44.5e-6
 model=rppd
 body=gd
 spiceprefix=X
@@ -146,7 +146,7 @@ value="expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-
 C {/foss/designs/test/circuit/opamp_folded.sym} 580 -370 0 0 {name=xopamp}
 C {sg13cmos5l_pr/rppd.sym} 130 100 0 0 {name=R5
 w=2e-6
-l=37.5e-6
+l=39.57e-6
 model=rppd
 body=gd
 spiceprefix=X
@@ -159,7 +159,7 @@ C {lab_wire.sym} 130 240 3 0 {name=p12 sig_type=std_logic lab=gd
 }
 C {sg13cmos5l_pr/rppd.sym} 130 200 0 0 {name=R6
 w=2e-6
-l=12.5e-6
+l=13.19e-6
 model=rppd
 body=gd
 spiceprefix=X
@@ -169,7 +169,7 @@ value="expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-
 }
 C {sg13cmos5l_pr/rppd.sym} 290 100 0 0 {name=R7
 w=2e-6
-l=12.5e-6
+l=13.19e-6
 model=rppd
 body=gd
 spiceprefix=X
