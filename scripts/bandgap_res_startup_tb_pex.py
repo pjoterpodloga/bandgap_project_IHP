@@ -3,7 +3,11 @@ from ngspice_utils import *
 import pandas as pd
 import glob
 
-raw_files = glob.glob("*.raw_*")
+def sorter(item):
+    corner_num = int(item.split("_")[-1])
+    return corner_num
+
+raw_files = sorted(glob.glob("*.raw_*"), key=sorter)
 
 v_ref_result        = [0.]*len(raw_files)
 t_setup_bg_result   = [0.]*len(raw_files)
@@ -34,8 +38,8 @@ for rw in raw_files:
 
     t_delay = Signal.cross(v_vp, vp/2)
 
-    t_ready_bg = Signal.value_at(v_ref, v_ref_tend*0.95)
-    t_ready_gm = Signal.value_at(v_bias, v_bias_tend*0.95)
+    t_ready_bg = Signal.cross(v_ref, v_ref_tend*0.95)
+    t_ready_gm = Signal.cross(v_bias, v_bias_tend*0.95)
 
     t_setup_bg = t_ready_bg - t_delay
     t_setup_gm = t_ready_gm - t_delay
