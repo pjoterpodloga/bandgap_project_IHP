@@ -2,52 +2,200 @@ lib cornerMOShv.lib
 lib cornerRES.lib
 lib cornerPNP.lib
 param xvp
-0: mos_tt res_typ typ 3.3
-1: mos_ss res_bcs bcs 2.97
-2: mos_ss res_bcs bcs 3.3
-3: mos_ss res_bcs bcs 3.63
-4: mos_ss res_bcs wcs 2.97
-5: mos_ss res_bcs wcs 3.3
-6: mos_ss res_bcs wcs 3.63
-7: mos_ss res_wcs bcs 2.97
-8: mos_ss res_wcs bcs 3.3
-9: mos_ss res_wcs bcs 3.63
-10: mos_ss res_wcs wcs 2.97
-11: mos_ss res_wcs wcs 3.3
-12: mos_ss res_wcs wcs 3.63
-13: mos_sf res_bcs bcs 2.97
-14: mos_sf res_bcs bcs 3.3
-15: mos_sf res_bcs bcs 3.63
-16: mos_sf res_bcs wcs 2.97
-17: mos_sf res_bcs wcs 3.3
-18: mos_sf res_bcs wcs 3.63
-19: mos_sf res_wcs bcs 2.97
-20: mos_sf res_wcs bcs 3.3
-21: mos_sf res_wcs bcs 3.63
-22: mos_sf res_wcs wcs 2.97
-23: mos_sf res_wcs wcs 3.3
-24: mos_sf res_wcs wcs 3.63
-25: mos_fs res_bcs bcs 2.97
-26: mos_fs res_bcs bcs 3.3
-27: mos_fs res_bcs bcs 3.63
-28: mos_fs res_bcs wcs 2.97
-29: mos_fs res_bcs wcs 3.3
-30: mos_fs res_bcs wcs 3.63
-31: mos_fs res_wcs bcs 2.97
-32: mos_fs res_wcs bcs 3.3
-33: mos_fs res_wcs bcs 3.63
-34: mos_fs res_wcs wcs 2.97
-35: mos_fs res_wcs wcs 3.3
-36: mos_fs res_wcs wcs 3.63
-37: mos_ff res_bcs bcs 2.97
-38: mos_ff res_bcs bcs 3.3
-39: mos_ff res_bcs bcs 3.63
-40: mos_ff res_bcs wcs 2.97
-41: mos_ff res_bcs wcs 3.3
-42: mos_ff res_bcs wcs 3.63
-43: mos_ff res_wcs bcs 2.97
-44: mos_ff res_wcs bcs 3.3
-45: mos_ff res_wcs bcs 3.63
-46: mos_ff res_wcs wcs 2.97
-47: mos_ff res_wcs wcs 3.3
-48: mos_ff res_wcs wcs 3.63
+param xtemp
+0: mos_tt res_typ typ 3.3 -55
+1: mos_tt res_typ typ 3.3 0
+2: mos_tt res_typ typ 3.3 25
+3: mos_tt res_typ typ 3.3 125
+4: mos_ss res_bcs bcs 2.97 -55
+5: mos_ss res_bcs bcs 2.97 0
+6: mos_ss res_bcs bcs 2.97 25
+7: mos_ss res_bcs bcs 2.97 125
+8: mos_ss res_bcs bcs 3.3 -55
+9: mos_ss res_bcs bcs 3.3 0
+10: mos_ss res_bcs bcs 3.3 25
+11: mos_ss res_bcs bcs 3.3 125
+12: mos_ss res_bcs bcs 3.63 -55
+13: mos_ss res_bcs bcs 3.63 0
+14: mos_ss res_bcs bcs 3.63 25
+15: mos_ss res_bcs bcs 3.63 125
+16: mos_ss res_bcs wcs 2.97 -55
+17: mos_ss res_bcs wcs 2.97 0
+18: mos_ss res_bcs wcs 2.97 25
+19: mos_ss res_bcs wcs 2.97 125
+20: mos_ss res_bcs wcs 3.3 -55
+21: mos_ss res_bcs wcs 3.3 0
+22: mos_ss res_bcs wcs 3.3 25
+23: mos_ss res_bcs wcs 3.3 125
+24: mos_ss res_bcs wcs 3.63 -55
+25: mos_ss res_bcs wcs 3.63 0
+26: mos_ss res_bcs wcs 3.63 25
+27: mos_ss res_bcs wcs 3.63 125
+28: mos_ss res_wcs bcs 2.97 -55
+29: mos_ss res_wcs bcs 2.97 0
+30: mos_ss res_wcs bcs 2.97 25
+31: mos_ss res_wcs bcs 2.97 125
+32: mos_ss res_wcs bcs 3.3 -55
+33: mos_ss res_wcs bcs 3.3 0
+34: mos_ss res_wcs bcs 3.3 25
+35: mos_ss res_wcs bcs 3.3 125
+36: mos_ss res_wcs bcs 3.63 -55
+37: mos_ss res_wcs bcs 3.63 0
+38: mos_ss res_wcs bcs 3.63 25
+39: mos_ss res_wcs bcs 3.63 125
+40: mos_ss res_wcs wcs 2.97 -55
+41: mos_ss res_wcs wcs 2.97 0
+42: mos_ss res_wcs wcs 2.97 25
+43: mos_ss res_wcs wcs 2.97 125
+44: mos_ss res_wcs wcs 3.3 -55
+45: mos_ss res_wcs wcs 3.3 0
+46: mos_ss res_wcs wcs 3.3 25
+47: mos_ss res_wcs wcs 3.3 125
+48: mos_ss res_wcs wcs 3.63 -55
+49: mos_ss res_wcs wcs 3.63 0
+50: mos_ss res_wcs wcs 3.63 25
+51: mos_ss res_wcs wcs 3.63 125
+52: mos_sf res_bcs bcs 2.97 -55
+53: mos_sf res_bcs bcs 2.97 0
+54: mos_sf res_bcs bcs 2.97 25
+55: mos_sf res_bcs bcs 2.97 125
+56: mos_sf res_bcs bcs 3.3 -55
+57: mos_sf res_bcs bcs 3.3 0
+58: mos_sf res_bcs bcs 3.3 25
+59: mos_sf res_bcs bcs 3.3 125
+60: mos_sf res_bcs bcs 3.63 -55
+61: mos_sf res_bcs bcs 3.63 0
+62: mos_sf res_bcs bcs 3.63 25
+63: mos_sf res_bcs bcs 3.63 125
+64: mos_sf res_bcs wcs 2.97 -55
+65: mos_sf res_bcs wcs 2.97 0
+66: mos_sf res_bcs wcs 2.97 25
+67: mos_sf res_bcs wcs 2.97 125
+68: mos_sf res_bcs wcs 3.3 -55
+69: mos_sf res_bcs wcs 3.3 0
+70: mos_sf res_bcs wcs 3.3 25
+71: mos_sf res_bcs wcs 3.3 125
+72: mos_sf res_bcs wcs 3.63 -55
+73: mos_sf res_bcs wcs 3.63 0
+74: mos_sf res_bcs wcs 3.63 25
+75: mos_sf res_bcs wcs 3.63 125
+76: mos_sf res_wcs bcs 2.97 -55
+77: mos_sf res_wcs bcs 2.97 0
+78: mos_sf res_wcs bcs 2.97 25
+79: mos_sf res_wcs bcs 2.97 125
+80: mos_sf res_wcs bcs 3.3 -55
+81: mos_sf res_wcs bcs 3.3 0
+82: mos_sf res_wcs bcs 3.3 25
+83: mos_sf res_wcs bcs 3.3 125
+84: mos_sf res_wcs bcs 3.63 -55
+85: mos_sf res_wcs bcs 3.63 0
+86: mos_sf res_wcs bcs 3.63 25
+87: mos_sf res_wcs bcs 3.63 125
+88: mos_sf res_wcs wcs 2.97 -55
+89: mos_sf res_wcs wcs 2.97 0
+90: mos_sf res_wcs wcs 2.97 25
+91: mos_sf res_wcs wcs 2.97 125
+92: mos_sf res_wcs wcs 3.3 -55
+93: mos_sf res_wcs wcs 3.3 0
+94: mos_sf res_wcs wcs 3.3 25
+95: mos_sf res_wcs wcs 3.3 125
+96: mos_sf res_wcs wcs 3.63 -55
+97: mos_sf res_wcs wcs 3.63 0
+98: mos_sf res_wcs wcs 3.63 25
+99: mos_sf res_wcs wcs 3.63 125
+100: mos_fs res_bcs bcs 2.97 -55
+101: mos_fs res_bcs bcs 2.97 0
+102: mos_fs res_bcs bcs 2.97 25
+103: mos_fs res_bcs bcs 2.97 125
+104: mos_fs res_bcs bcs 3.3 -55
+105: mos_fs res_bcs bcs 3.3 0
+106: mos_fs res_bcs bcs 3.3 25
+107: mos_fs res_bcs bcs 3.3 125
+108: mos_fs res_bcs bcs 3.63 -55
+109: mos_fs res_bcs bcs 3.63 0
+110: mos_fs res_bcs bcs 3.63 25
+111: mos_fs res_bcs bcs 3.63 125
+112: mos_fs res_bcs wcs 2.97 -55
+113: mos_fs res_bcs wcs 2.97 0
+114: mos_fs res_bcs wcs 2.97 25
+115: mos_fs res_bcs wcs 2.97 125
+116: mos_fs res_bcs wcs 3.3 -55
+117: mos_fs res_bcs wcs 3.3 0
+118: mos_fs res_bcs wcs 3.3 25
+119: mos_fs res_bcs wcs 3.3 125
+120: mos_fs res_bcs wcs 3.63 -55
+121: mos_fs res_bcs wcs 3.63 0
+122: mos_fs res_bcs wcs 3.63 25
+123: mos_fs res_bcs wcs 3.63 125
+124: mos_fs res_wcs bcs 2.97 -55
+125: mos_fs res_wcs bcs 2.97 0
+126: mos_fs res_wcs bcs 2.97 25
+127: mos_fs res_wcs bcs 2.97 125
+128: mos_fs res_wcs bcs 3.3 -55
+129: mos_fs res_wcs bcs 3.3 0
+130: mos_fs res_wcs bcs 3.3 25
+131: mos_fs res_wcs bcs 3.3 125
+132: mos_fs res_wcs bcs 3.63 -55
+133: mos_fs res_wcs bcs 3.63 0
+134: mos_fs res_wcs bcs 3.63 25
+135: mos_fs res_wcs bcs 3.63 125
+136: mos_fs res_wcs wcs 2.97 -55
+137: mos_fs res_wcs wcs 2.97 0
+138: mos_fs res_wcs wcs 2.97 25
+139: mos_fs res_wcs wcs 2.97 125
+140: mos_fs res_wcs wcs 3.3 -55
+141: mos_fs res_wcs wcs 3.3 0
+142: mos_fs res_wcs wcs 3.3 25
+143: mos_fs res_wcs wcs 3.3 125
+144: mos_fs res_wcs wcs 3.63 -55
+145: mos_fs res_wcs wcs 3.63 0
+146: mos_fs res_wcs wcs 3.63 25
+147: mos_fs res_wcs wcs 3.63 125
+148: mos_ff res_bcs bcs 2.97 -55
+149: mos_ff res_bcs bcs 2.97 0
+150: mos_ff res_bcs bcs 2.97 25
+151: mos_ff res_bcs bcs 2.97 125
+152: mos_ff res_bcs bcs 3.3 -55
+153: mos_ff res_bcs bcs 3.3 0
+154: mos_ff res_bcs bcs 3.3 25
+155: mos_ff res_bcs bcs 3.3 125
+156: mos_ff res_bcs bcs 3.63 -55
+157: mos_ff res_bcs bcs 3.63 0
+158: mos_ff res_bcs bcs 3.63 25
+159: mos_ff res_bcs bcs 3.63 125
+160: mos_ff res_bcs wcs 2.97 -55
+161: mos_ff res_bcs wcs 2.97 0
+162: mos_ff res_bcs wcs 2.97 25
+163: mos_ff res_bcs wcs 2.97 125
+164: mos_ff res_bcs wcs 3.3 -55
+165: mos_ff res_bcs wcs 3.3 0
+166: mos_ff res_bcs wcs 3.3 25
+167: mos_ff res_bcs wcs 3.3 125
+168: mos_ff res_bcs wcs 3.63 -55
+169: mos_ff res_bcs wcs 3.63 0
+170: mos_ff res_bcs wcs 3.63 25
+171: mos_ff res_bcs wcs 3.63 125
+172: mos_ff res_wcs bcs 2.97 -55
+173: mos_ff res_wcs bcs 2.97 0
+174: mos_ff res_wcs bcs 2.97 25
+175: mos_ff res_wcs bcs 2.97 125
+176: mos_ff res_wcs bcs 3.3 -55
+177: mos_ff res_wcs bcs 3.3 0
+178: mos_ff res_wcs bcs 3.3 25
+179: mos_ff res_wcs bcs 3.3 125
+180: mos_ff res_wcs bcs 3.63 -55
+181: mos_ff res_wcs bcs 3.63 0
+182: mos_ff res_wcs bcs 3.63 25
+183: mos_ff res_wcs bcs 3.63 125
+184: mos_ff res_wcs wcs 2.97 -55
+185: mos_ff res_wcs wcs 2.97 0
+186: mos_ff res_wcs wcs 2.97 25
+187: mos_ff res_wcs wcs 2.97 125
+188: mos_ff res_wcs wcs 3.3 -55
+189: mos_ff res_wcs wcs 3.3 0
+190: mos_ff res_wcs wcs 3.3 25
+191: mos_ff res_wcs wcs 3.3 125
+192: mos_ff res_wcs wcs 3.63 -55
+193: mos_ff res_wcs wcs 3.63 0
+194: mos_ff res_wcs wcs 3.63 25
+195: mos_ff res_wcs wcs 3.63 125
