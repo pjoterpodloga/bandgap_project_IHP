@@ -3,9 +3,9 @@ lib cornerRES.lib
 lib cornerPNP.lib
 param xvp
 param xtemp
-0: mos_tt res_typ typ 3.3 -55
-1: mos_tt res_typ typ 3.3 0
-2: mos_tt res_typ typ 3.3 25
+0: mos_tt res_typ typ 3.3 25
+1: mos_tt res_typ typ 3.3 -55
+2: mos_tt res_typ typ 3.3 0
 3: mos_tt res_typ typ 3.3 125
 4: mos_ss res_bcs bcs 2.97 -55
 5: mos_ss res_bcs bcs 2.97 0
