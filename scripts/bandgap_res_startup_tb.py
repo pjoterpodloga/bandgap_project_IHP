@@ -3,7 +3,11 @@ from ngspice_utils import *
 import pandas as pd
 import glob
 
-raw_files = glob.glob("*.raw_*")
+def sorter(item):
+    corner_num = int(item.split("_")[-1])
+    return corner_num
+
+raw_files = sorted(glob.glob("*.raw_*"), key=sorter)
 
 v_ref_result        = [0.]*len(raw_files)
 t_setup_bg_result   = [0.]*len(raw_files)
