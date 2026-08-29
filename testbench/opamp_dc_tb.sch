@@ -36,10 +36,12 @@ N 860 -20 860 0 {lab=gd}
 N 1180 -280 1250 -280 {lab=out}
 N 520 -380 520 -330 {lab=vp}
 N 520 -110 520 0 {lab=gd}
-N 650 -220 710 -220 {lab=#net2}
-N 710 -250 710 -220 {lab=#net2}
-N 710 -330 710 -310 {lab=bias}
+N 650 -260 740 -260 {lab=#net2}
+N 740 -290 740 -260 {lab=#net2}
+N 740 -370 740 -350 {lab=bias}
 N 800 -310 1000 -310 {lab=inp}
+N 650 -280 680 -280 {lab=#net3}
+N 650 -240 680 -240 {lab=#net4}
 C {lab_wire.sym} 1060 -180 3 1 {name=p4 sig_type=std_logic lab=bias}
 C {lab_wire.sym} 1080 -180 3 1 {name=p5 sig_type=std_logic lab=gd}
 C {lab_wire.sym} 1080 -380 3 0 {name=p6 sig_type=std_logic lab=vp}
@@ -67,13 +69,12 @@ C {lab_wire.sym} 200 -140 0 0 {name=p18 sig_type=std_logic lab=gd}
 C {lab_wire.sym} 140 -270 3 0 {name=p19 sig_type=std_logic lab=vp}
 C {vsource.sym} 320 -210 0 0 {name=VIN value="DC xvid" ac=1 savecurrent=false}
 C {lab_wire.sym} 320 -270 3 0 {name=p20 sig_type=std_logic lab=in}
-C {vsource.sym} 860 -50 0 0 {name=VCM value='xvp/2' savecurrent=false}
+C {vsource.sym} 860 -50 0 0 {name=VCM value='0.7' savecurrent=false}
 C {lab_wire.sym} 860 -10 3 0 {name=p9 sig_type=std_logic lab=gd}
 C {lab_wire.sym} 520 -10 3 0 {name=p1 sig_type=std_logic lab=gd}
-C {vsource.sym} 710 -280 0 0 {name=Vibias value=0 savecurrent=true}
-C {lab_wire.sym} 710 -330 3 0 {name=p2 sig_type=std_logic lab=bias}
+C {vsource.sym} 740 -320 0 0 {name=Vibias value=0 savecurrent=true}
+C {lab_wire.sym} 740 -370 3 0 {name=p2 sig_type=std_logic lab=bias}
 C {lab_wire.sym} 520 -370 3 0 {name=p3 sig_type=std_logic lab=vp}
-C {/foss/designs/master/bandgap_res/opamp_folded.sym} 1000 -310 0 0 {name=x1}
 C {/foss/designs/test/circuit/const_gm_bias.sym} 430 -130 0 0 {name=x2}
 C {netlist.sym} 10 -840 0 0 {name=s1 
 value="
@@ -92,8 +93,10 @@ value="
 .save v(vp)
 
 .temp 'xtemp'
-.dc VIN -10m 10m 10u
+.dc VIN -10m 10m 100u
 
 .option rshunt=1e12
-.option gmin=1e-12
 "}
+C {noconn.sym} 680 -280 2 0 {name=l2}
+C {noconn.sym} 680 -240 2 0 {name=l3}
+C {/foss/designs/test/circuit/opamp_folded_pmos.sym} 1000 -310 0 0 {name=x1}
