@@ -105,7 +105,7 @@ spiceprefix=X
 C {opin.sym} 920 -240 0 0 {name=p2 lab=vref}
 C {sg13cmos5l_pr/rppd.sym} 520 -160 0 0 {name=R2
 w=2e-6
-l=105.52e-6
+l=111.6e-6
 model=rppd
 body=gd
 spiceprefix=X
@@ -115,7 +115,7 @@ value="expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-
 }
 C {sg13cmos5l_pr/rppd.sym} 40 -160 0 0 {name=R3
 w=2e-6
-l=105.52e-6
+l=111.6e-6
 model=rppd
 body=gd
 spiceprefix=X
@@ -125,7 +125,7 @@ value="expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-
 }
 C {sg13cmos5l_pr/rppd.sym} 860 -160 0 0 {name=R4
 w=2e-6
-l=105.52e-6
+l=111.6e-6
 model=rppd
 body=gd
 spiceprefix=X
@@ -135,7 +135,7 @@ value="expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-
 }
 C {sg13cmos5l_pr/rppd.sym} 360 -160 0 0 {name=R1
 w=5.8e-6
-l=44.5e-6
+l=45.5e-6
 model=rppd
 body=gd
 spiceprefix=X
@@ -143,10 +143,9 @@ b=0
 m=1
 value="expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )"
 }
-C {/foss/designs/test/circuit/opamp_folded.sym} 580 -370 0 0 {name=xopamp}
 C {sg13cmos5l_pr/rppd.sym} 130 100 0 0 {name=R5
 w=2e-6
-l=39.57e-6
+l=41.85e-6
 model=rppd
 body=gd
 spiceprefix=X
@@ -159,7 +158,7 @@ C {lab_wire.sym} 130 240 3 0 {name=p12 sig_type=std_logic lab=gd
 }
 C {sg13cmos5l_pr/rppd.sym} 130 200 0 0 {name=R6
 w=2e-6
-l=13.19e-6
+l=13.95e-6
 model=rppd
 body=gd
 spiceprefix=X
@@ -169,12 +168,12 @@ value="expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-
 }
 C {sg13cmos5l_pr/rppd.sym} 290 100 0 0 {name=R7
 w=2e-6
-l=13.19e-6
+l=13.95e-6
 model=rppd
 body=gd
 spiceprefix=X
 b=0
-m=1
+m=2
 value="expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )"
 }
 C {lab_wire.sym} 290 50 3 1 {name=p1 sig_type=std_logic lab=gd}
@@ -183,3 +182,4 @@ C {lab_wire.sym} 290 140 3 0 {name=p8 sig_type=std_logic lab=gd
 C {opin.sym} 200 -90 1 0 {name=p9 lab=d1}
 C {opin.sym} 360 -90 1 0 {name=p13 lab=d8}
 C {lab_wire.sym} 550 -560 0 0 {name=p14 sig_type=std_logic lab=vg}
+C {/foss/designs/test/circuit/opamp_folded_pmos.sym} 580 -370 0 0 {name=x1}
