@@ -1,0 +1,8 @@
+# bandgap_res_core_temp_vp_sweep_tb
+# meas_name    |    min_spec    |   max_spec    |   unit    |   prefix  |   description
+v_ref_min           1.15            1.25            V           None        "Minimal of output reference voltage"
+v_ref_max           1.15            1.25            V           None        "Maximum of output reference voltage"
+v_ref_sub           None            5               V           m           "Spread of output reference voltage"
+v_ref_at_25C        1.18            1.22            V           None        "Output refernece voltage at 25C"
+v_ref_avg           1.18            1.22            V           None        "Average of output reference voltage"
+temp_coeff          None            25              ppm         None        "Temperature coefficient of output reference voltage"

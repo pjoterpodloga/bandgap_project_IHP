@@ -1,0 +1,6 @@
+.control
+run
+save all
+set filetype=ascii
+write bandgap_selfbias_core_temp_sweep_tb.raw all
+.endc
