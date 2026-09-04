@@ -1,0 +1,10 @@
+
+NAME           bandgap_res_ip_tb
+
+CONTROL        bandgap_res_ip_tb.control
+TESTBENCH      ip_bandgap_delta_v_tb.sch
+CORNERS        bandgap_res_ip_tb.corner_gen
+SCRIPT         bandgap_res_ip_tb.py
+MEAS           bandgap_res_ip_tb.meas
+
+PLOT           plot.template.plt

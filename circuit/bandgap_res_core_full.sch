@@ -48,8 +48,8 @@ N 650 -570 670 -570 {lab=start_up}
 N 670 -570 670 -560 {lab=start_up}
 N 670 -560 790 -560 {lab=start_up}
 N 660 -690 860 -690 {lab=vp}
-N 860 -340 930 -340 {lab=vp}
-N 790 -340 820 -340 {lab=start_up}
+N 860 -620 930 -620 {lab=vp}
+N 790 -620 820 -620 {lab=start_up}
 N 760 -340 790 -340 {lab=start_up}
 N 660 -270 660 -0 {lab=gd}
 N 520 0 660 0 {lab=gd}
@@ -62,14 +62,14 @@ N 660 -690 660 -410 {lab=vp}
 N 360 -370 360 -220 {lab=#net2}
 N 200 -310 200 -220 {lab=#net3}
 N 860 -240 920 -240 {lab=vref}
-N 860 -310 860 -240 {lab=vref}
+N 860 -590 860 -240 {lab=vref}
 N 370 -310 580 -310 {lab=#net3}
 N 370 -320 370 -310 {lab=#net3}
 N 350 -320 370 -320 {lab=#net3}
 N 350 -320 350 -310 {lab=#net3}
 N 200 -310 350 -310 {lab=#net3}
 N 360 -370 580 -370 {lab=#net2}
-N 860 -690 860 -370 {lab=vp}
+N 860 -690 860 -650 {lab=vp}
 N 40 230 40 260 {lab=gd}
 N 40 40 40 70 {lab=gd}
 N 360 -590 360 -370 {lab=#net2}
@@ -82,6 +82,7 @@ N 0 -560 190 -560 {lab=start_up}
 N 40 130 40 170 {lab=#net4}
 N 200 40 200 70 {lab=gd}
 N 200 130 200 160 {lab=gd}
+N 790 -620 790 -560 {lab=start_up}
 C {sg13cmos5l_pr/pnpMPA.sym} 180 -60 0 0 {name=Q1
 model=pnpMPA
 spiceprefix=X
@@ -100,7 +101,7 @@ C {ipin.sym} 0 0 0 0 {name=p4 lab=gd}
 C {ipin.sym} 0 -690 0 0 {name=p5 lab=vp}
 C {lab_wire.sym} 150 -620 0 0 {name=p6 sig_type=std_logic lab=vp}
 C {lab_wire.sym} 410 -620 0 1 {name=p7 sig_type=std_logic lab=vp}
-C {lab_wire.sym} 910 -340 0 1 {name=p10 sig_type=std_logic lab=vp}
+C {lab_wire.sym} 910 -620 0 1 {name=p10 sig_type=std_logic lab=vp}
 C {ipin.sym} 610 -240 0 0 {name=p11 lab=ibias}
 C {sg13cmos5l_pr/sg13_hv_pmos.sym} 340 -620 0 0 {name=M2
 l=0.9u
@@ -118,7 +119,7 @@ m=10
 model=sg13_hv_pmos
 spiceprefix=X
 }
-C {sg13cmos5l_pr/sg13_hv_pmos.sym} 840 -340 0 0 {name=M3
+C {sg13cmos5l_pr/sg13_hv_pmos.sym} 840 -620 0 0 {name=M3
 l=0.9u
 w=3.6u
 ng=1

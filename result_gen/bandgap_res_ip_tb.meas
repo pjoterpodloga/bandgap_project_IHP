@@ -1,0 +1,3 @@
+# bandgap_res_core_temp_vp_sweep_tb
+# meas_name    |    min_spec    |   max_spec    |   unit    |   prefix  |   description
+v_ref_min           1.15            1.25            V           None        "Minimal of output reference voltage"

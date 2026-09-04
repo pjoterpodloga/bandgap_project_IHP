@@ -1,0 +1,5 @@
+# Corner gen file for bandgap_res_ip_tb
+lib cornerPNP.lib
+param xvp
+param xtemp
+corner_gen [typ] [3.3] [25]

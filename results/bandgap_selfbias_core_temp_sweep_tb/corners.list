@@ -1,0 +1,28 @@
+lib cornerMOShv.lib
+lib cornerPNP.lib
+param xvp
+0: mos_tt typ 1.2
+1: mos_ss bcs 1.08
+2: mos_ss bcs 1.2
+3: mos_ss bcs 1.32
+4: mos_ss wcs 1.08
+5: mos_ss wcs 1.2
+6: mos_ss wcs 1.32
+7: mos_sf bcs 1.08
+8: mos_sf bcs 1.2
+9: mos_sf bcs 1.32
+10: mos_sf wcs 1.08
+11: mos_sf wcs 1.2
+12: mos_sf wcs 1.32
+13: mos_fs bcs 1.08
+14: mos_fs bcs 1.2
+15: mos_fs bcs 1.32
+16: mos_fs wcs 1.08
+17: mos_fs wcs 1.2
+18: mos_fs wcs 1.32
+19: mos_ff bcs 1.08
+20: mos_ff bcs 1.2
+21: mos_ff bcs 1.32
+22: mos_ff wcs 1.08
+23: mos_ff wcs 1.2
+24: mos_ff wcs 1.32

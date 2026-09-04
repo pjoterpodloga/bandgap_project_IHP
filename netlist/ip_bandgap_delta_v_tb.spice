@@ -1,0 +1,29 @@
+** sch_path: /foss/designs/test/testbench/ip_bandgap_delta_v_tb.sch
+**.subckt ip_bandgap_delta_v_tb
+Ibias vp ibias_ref xibias
+Rref ibias_ref gd 1
+V1 gd 0 0
+V2 vp gd xvp
+XQ1 gd gd vd1 pnpMPA a=4e-12 p=8e-06
+XQ2 gd gd vd2 pnpMPA a=4e-12 p=8e-06 m=8
+G1 vp vd1 ibias_ref gd 1
+G2 vp vd2 ibias_ref gd 1
+**** begin user architecture code
+
+
+.lib cornerPNP.lib typ
+
+.param xvp=3.3
+.param xibias=100u
+
+.param xtemp=25
+
+.save all
+
+.temp 'xtemp'
+.dc Ibias 5u 200u 0.25u
+
+
+**** end user architecture code
+**.ends
+.end
