@@ -1,5 +1,5 @@
 
-NAME            bandgap_res_temp_sweep_mc_pex_tb_stat2
+NAME            bandgap_res_temp_sweep_mc_pex_tb
 
 CONTROL         bandgap_res_temp_sweep_tb.control
 #NETLIST         bandgap_res_temp_sweep_tb.spice
@@ -12,4 +12,4 @@ MEAS            bandgap_res_temp_sweep_mc_tb.meas
 
 PLOT            plot.template.plt
 
-EXTRACTION      bandgap_res_core_wrapper.mod.pex.spice
+EXTRACTION      bandgap_res_core_wrapper.pex.spice

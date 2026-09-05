@@ -28,7 +28,7 @@ C {/foss/designs/test/circuit/bandgap_res_diodes.sym} 370 -160 0 0 {name=x2}
 C {lab_wire.sym} 370 -220 3 0 {name=p1 sig_type=std_logic lab=vd1}
 C {lab_wire.sym} 430 -220 3 0 {name=p2 sig_type=std_logic lab=vd8}
 C {lab_wire.sym} 470 -430 3 0 {name=p3 sig_type=std_logic lab=vp}
-C {netlist.sym} 0 -1000 0 0 {name=s1 
+C {netlist.sym} 0 -1030 0 0 {name=s1 
 value=
 "
 .lib cornerMOShv.lib mos_tt
@@ -46,6 +46,7 @@ value=
 .save v(vd8)
 .save v(vp)
 .save v(vbias)
+.save i(vp)
 
 .save v(xdut.xstartup.vcap)
 .save v(xdut.xbandgap.vg)

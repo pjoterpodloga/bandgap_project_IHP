@@ -3,6 +3,6 @@ lib cornerMOShv.lib
 lib cornerRES.lib
 lib cornerPNP.lib
 param  xvp
-mc 100
+mc 300
 corner_gen [mos_tt_stat] [res_stat] [typ] [3.3]
 #corner_gen [mos_ss,mos_sf,mos_fs,mos_ff] [res_bcs,res_wcs] [bcs,wcs] [2.97, 3.3, 3.63]

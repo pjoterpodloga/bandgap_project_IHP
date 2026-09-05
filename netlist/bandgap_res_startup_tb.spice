@@ -25,6 +25,7 @@ C2 vbias gd 1f
 .save v(vd8)
 .save v(vp)
 .save v(vbias)
+.save i(vp)
 
 .save v(xdut.xstartup.vcap)
 .save v(xdut.xbandgap.vg)

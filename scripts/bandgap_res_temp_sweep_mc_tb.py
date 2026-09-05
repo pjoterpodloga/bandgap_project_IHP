@@ -67,7 +67,6 @@ for rw in raw_files:
     v_ref_at_25C = Signal.value_at(v_ref, 25)
     v_ref_max = Signal.ymax(v_ref)
     v_ref_min = Signal.ymin(v_ref)
-    v_ref_sub = np.abs(v_ref_max-v_ref_min)
     v_ref_avg = np.average(v_ref)
     v_ref_sub = v_ref_max - v_ref_min
     print(f"v_ref_max: {get_value_with_prefix(v_ref_max)}")
@@ -83,22 +82,44 @@ for rw in raw_files:
     v_ref_sub_result[corner_number] = v_ref_sub
     v_ref_avg_result[corner_number] = v_ref_avg
     v_ref_at_25C_result[corner_number] = v_ref_at_25C
-    #v_gate_min_result[corner_number] = v_gate_min
-    #v_gate_max_result[corner_number] = v_gate_max
-    #v_gate_avg_result[corner_number] = v_gate_avg
-    #i_ref_max_result[corner_number] = i_ref_max
-    #i_ref_min_result[corner_number] = i_ref_min
-    #i_ref_avg_result[corner_number] = i_ref_avg
-    #i_ref_at_25C_result[corner_number] = i_ref_at_25C
     temp_coeff_result[corner_number] = temp_coeff
 
-    plt.figure(tight_layout=True)
-    plt.plot(Signal.get_x_axis(), v_ref)
-    plt.grid(True)
-    plt.title("Generowane napięcie referencyje w funkcji temperatury")
-    plt.ylabel("Napięcie [V]")
-    plt.xlabel("Temperatura [$\\degree$C]")
-    plt.savefig(f"plot_{corner_number}.png")
+    #plt.figure(tight_layout=True)
+    #plt.plot(Signal.get_x_axis(), v_ref)
+    #plt.grid(True)
+    #plt.title("Generowane napięcie referencyje w funkcji temperatury")
+    #plt.ylabel("Napięcie [V]")
+    #plt.xlabel("Temperatura [$\\degree$C]")
+    #plt.savefig(f"plot_{corner_number}.png")
+
+v_ref_avg = np.mean(v_ref_avg_result)
+v_ref_std = np.std(v_ref_avg_result)
+
+print(f"Wartość średnia v_ref: {v_ref_avg}")
+print(f"Odchylenie standardowe v_ref: {v_ref_std}")
+
+plt.figure(tight_layout=True)
+plt.hist(v_ref_avg_result, bins=10, edgecolor="black")
+plt.grid(True)
+plt.title("Histogram rozrzutu generowanego napięcia referencyjnego")
+plt.ylabel("Ilość próbek")
+plt.xlabel("Napięcie [V]")
+
+plt.text(
+    0.05, 0.95,
+    f"Średnia = {v_ref_avg:.3f} V\n"
+    f"Odchylenie stand. = {v_ref_std*1e3:.3f} mV",
+    transform=plt.gca().transAxes,
+    ha="right",
+    va="top",
+    bbox=dict(
+        boxstyle="round",
+        facecolor="white",
+        edgecolor="black"
+    )
+)
+
+plt.savefig("histogram_vref.png")
 
 
 data = {"v_ref_min" : v_ref_min_result, 
