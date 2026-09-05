@@ -2,5 +2,5 @@
 lib cornerMOShv.lib
 lib cornerPNP.lib
 param  xvp
-corner_gen [mos_tt] [typ] [1.2]
-corner_gen [mos_ss,mos_sf,mos_fs,mos_ff] [bcs,wcs] [1.08, 1.2, 1.32]
+corner_gen [mos_tt] [typ] [1.8]
+corner_gen [mos_ss,mos_sf,mos_fs,mos_ff] [bcs,wcs] [1.62, 1.8, 1.99]

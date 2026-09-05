@@ -5,170 +5,129 @@ V {}
 S {}
 F {}
 E {}
-N 240 -80 300 -80 {lab=gd}
-N 240 -420 300 -420 {lab=vp}
-N 180 -80 200 -80 {lab=#net1}
-N 240 -130 240 -110 {lab=#net1}
-N 180 -130 180 -80 {lab=#net1}
-N 180 -130 240 -130 {lab=#net1}
-N 240 -170 240 -130 {lab=#net1}
-N 240 -50 240 -10 {lab=gd}
-N 240 -200 300 -200 {lab=gd}
-N 180 -200 200 -200 {lab=diode}
-N 240 -280 300 -280 {lab=gd}
-N 240 -240 240 -230 {lab=#net2}
-N 240 -250 240 -240 {lab=#net2}
-N 180 -280 200 -280 {lab=diode}
-N 180 -280 180 -200 {lab=diode}
-N 80 -200 180 -200 {lab=diode}
-N 440 -200 500 -200 {lab=gd}
-N 440 -280 500 -280 {lab=gd}
-N 340 -240 340 -150 {lab=#net2}
-N 440 -170 440 -150 {lab=#net2}
-N 380 -200 400 -200 {lab=#net3}
-N 380 -280 400 -280 {lab=#net3}
-N 380 -330 380 -280 {lab=#net3}
-N 380 -330 440 -330 {lab=#net3}
-N 440 -330 440 -310 {lab=#net3}
-N 340 -150 440 -150 {lab=#net2}
-N 380 -280 380 -200 {lab=#net3}
-N 240 -240 340 -240 {lab=#net2}
-N 240 -360 240 -310 {lab=#net4}
-N 180 -360 240 -360 {lab=#net4}
-N 240 -370 240 -360 {lab=#net4}
-N 180 -420 180 -360 {lab=#net4}
-N 180 -420 200 -420 {lab=#net4}
-N 20 -420 80 -420 {lab=vp}
-N 120 -420 180 -420 {lab=#net4}
-N 80 -390 80 -200 {lab=diode}
-N 80 -200 80 -90 {lab=diode}
-N 80 -490 80 -450 {lab=vp}
-N 80 -490 240 -490 {lab=vp}
-N 240 -490 240 -450 {lab=vp}
+N 180 -160 240 -160 {lab=gd}
+N 240 -10 400 -10 {lab=gd}
+N 760 -510 960 -510 {lab=vp}
+N 400 -160 460 -160 {lab=gd}
+N 300 -160 360 -160 {lab=#net1}
+N 340 -60 400 -60 {lab=gd}
+N 180 -260 240 -260 {lab=gd}
+N 400 -260 460 -260 {lab=gd}
+N 300 -260 360 -260 {lab=#net2}
+N 400 -460 460 -460 {lab=vp}
+N 180 -460 240 -460 {lab=vp}
+N 400 -400 400 -290 {lab=#net3}
+N 240 -430 240 -310 {lab=#net2}
+N 340 -460 360 -460 {lab=#net3}
+N 240 -310 240 -290 {lab=#net2}
+N 240 -210 240 -190 {lab=#net1}
+N 340 -460 340 -400 {lab=#net3}
+N 280 -460 340 -460 {lab=#net3}
+N 340 -400 400 -400 {lab=#net3}
+N 400 -410 400 -400 {lab=#net3}
+N 240 -310 300 -310 {lab=#net2}
+N 300 -310 300 -260 {lab=#net2}
+N 280 -260 300 -260 {lab=#net2}
+N 240 -210 300 -210 {lab=#net1}
+N 240 -230 240 -210 {lab=#net1}
+N 300 -210 300 -160 {lab=#net1}
+N 280 -160 300 -160 {lab=#net1}
+N 400 -230 400 -190 {lab=#net4}
+N 400 -30 400 -10 {lab=gd}
+N 240 -130 240 -10 {lab=gd}
 N 0 -10 240 -10 {lab=gd}
-N 0 -490 80 -490 {lab=vp}
-N 80 -90 100 -90 {lab=diode}
-N 440 -420 500 -420 {lab=vp}
-N 380 -370 430 -370 {lab=#net4}
-N 240 -390 240 -370 {lab=#net4}
-N 430 -380 430 -370 {lab=#net4}
-N 430 -380 450 -380 {lab=#net4}
-N 450 -380 450 -370 {lab=#net4}
-N 380 -420 400 -420 {lab=#net4}
-N 380 -420 380 -370 {lab=#net4}
-N 240 -370 380 -370 {lab=#net4}
-N 240 -490 440 -490 {lab=vp}
-N 440 -490 440 -450 {lab=vp}
-N 840 -490 840 -450 {lab=vp}
-N 840 -240 860 -240 {lab=vref}
-N 840 -420 900 -420 {lab=vp}
-N 780 -420 780 -370 {lab=#net4}
-N 780 -420 800 -420 {lab=#net4}
-N 840 -390 840 -240 {lab=vref}
-N 440 -240 440 -230 {lab=#net5}
-N 640 -200 700 -200 {lab=gd}
-N 640 -280 700 -280 {lab=gd}
-N 540 -240 540 -150 {lab=#net5}
-N 640 -170 640 -150 {lab=#net5}
-N 580 -200 600 -200 {lab=#net6}
-N 580 -280 600 -280 {lab=#net6}
-N 580 -330 580 -280 {lab=#net6}
-N 580 -330 640 -330 {lab=#net6}
-N 640 -330 640 -310 {lab=#net6}
-N 540 -150 640 -150 {lab=#net5}
-N 580 -280 580 -200 {lab=#net6}
-N 440 -240 540 -240 {lab=#net5}
-N 640 -420 700 -420 {lab=vp}
-N 640 -390 640 -330 {lab=#net6}
-N 580 -370 630 -370 {lab=#net4}
-N 630 -380 630 -370 {lab=#net4}
-N 630 -380 650 -380 {lab=#net4}
-N 650 -380 650 -370 {lab=#net4}
-N 580 -420 600 -420 {lab=#net4}
-N 580 -420 580 -370 {lab=#net4}
-N 450 -370 580 -370 {lab=#net4}
-N 640 -240 640 -230 {lab=vref}
-N 440 -250 440 -240 {lab=#net5}
-N 440 -390 440 -330 {lab=#net3}
-N 640 -490 640 -450 {lab=vp}
-N 440 -490 640 -490 {lab=vp}
-N 650 -370 780 -370 {lab=#net4}
-N 640 -490 840 -490 {lab=vp}
-N 640 -240 840 -240 {lab=vref}
-N 640 -250 640 -240 {lab=vref}
-C {lab_wire.sym} 300 -80 0 1 {name=p1 sig_type=std_logic lab=gd}
-C {lab_wire.sym} 300 -420 0 1 {name=p2 sig_type=std_logic lab=vp}
-C {lab_wire.sym} 300 -200 0 1 {name=p3 sig_type=std_logic lab=gd}
-C {lab_wire.sym} 300 -280 0 1 {name=p4 sig_type=std_logic lab=gd}
-C {lab_wire.sym} 500 -200 0 1 {name=p5 sig_type=std_logic lab=gd}
-C {lab_wire.sym} 500 -280 0 1 {name=p6 sig_type=std_logic lab=gd}
-C {lab_wire.sym} 20 -420 0 0 {name=p11 sig_type=std_logic lab=vp}
-C {opin.sym} 100 -90 0 0 {name=p12 lab=diode}
+N 400 -130 400 -90 {lab=#net5}
+N 240 -510 240 -490 {lab=vp}
+N 0 -510 240 -510 {lab=vp}
+N 400 -510 400 -490 {lab=vp}
+N 240 -510 400 -510 {lab=vp}
+N 560 -460 620 -460 {lab=vp}
+N 500 -410 550 -410 {lab=#net3}
+N 400 -430 400 -410 {lab=#net3}
+N 500 -460 520 -460 {lab=#net3}
+N 500 -460 500 -410 {lab=#net3}
+N 400 -410 500 -410 {lab=#net3}
+N 550 -420 550 -410 {lab=#net3}
+N 550 -420 570 -420 {lab=#net3}
+N 570 -420 570 -410 {lab=#net3}
+N 570 -410 700 -410 {lab=#net3}
+N 560 -430 560 -310 {lab=#net6}
+N 560 -160 620 -160 {lab=gd}
+N 560 -260 620 -260 {lab=gd}
+N 560 -210 560 -190 {lab=#net7}
+N 560 -130 560 -10 {lab=gd}
+N 400 -10 560 -10 {lab=gd}
+N 500 -160 520 -160 {lab=#net6}
+N 500 -260 500 -160 {lab=#net6}
+N 500 -260 520 -260 {lab=#net6}
+N 500 -310 500 -260 {lab=#net6}
+N 500 -310 560 -310 {lab=#net6}
+N 560 -310 560 -290 {lab=#net6}
+N 560 -510 560 -490 {lab=vp}
+N 400 -510 560 -510 {lab=vp}
+N 760 -460 820 -460 {lab=vp}
+N 700 -410 750 -410 {lab=#net3}
+N 700 -460 720 -460 {lab=#net3}
+N 700 -460 700 -410 {lab=#net3}
+N 750 -420 750 -410 {lab=#net3}
+N 750 -420 770 -420 {lab=#net3}
+N 770 -420 770 -410 {lab=#net3}
+N 770 -410 900 -410 {lab=#net3}
+N 760 -430 760 -310 {lab=#net8}
+N 760 -160 820 -160 {lab=gd}
+N 760 -260 820 -260 {lab=gd}
+N 760 -210 760 -190 {lab=#net9}
+N 700 -160 720 -160 {lab=#net8}
+N 700 -260 700 -160 {lab=#net8}
+N 700 -260 720 -260 {lab=#net8}
+N 700 -310 700 -260 {lab=#net8}
+N 700 -310 760 -310 {lab=#net8}
+N 760 -310 760 -290 {lab=#net8}
+N 760 -510 760 -490 {lab=vp}
+N 560 -510 760 -510 {lab=vp}
+N 760 -130 760 -90 {lab=#net7}
+N 660 -90 760 -90 {lab=#net7}
+N 660 -210 660 -90 {lab=#net7}
+N 560 -210 660 -210 {lab=#net7}
+N 560 -230 560 -210 {lab=#net7}
+N 960 -160 1020 -160 {lab=gd}
+N 900 -160 920 -160 {lab=vref}
+N 760 -210 860 -210 {lab=#net9}
+N 760 -230 760 -210 {lab=#net9}
+N 860 -210 860 -100 {lab=#net9}
+N 860 -100 960 -100 {lab=#net9}
+N 960 -130 960 -100 {lab=#net9}
+N 960 -460 1020 -460 {lab=vp}
+N 900 -460 920 -460 {lab=#net3}
+N 900 -460 900 -410 {lab=#net3}
+N 960 -510 960 -490 {lab=vp}
+N 960 -210 960 -190 {lab=vref}
+N 1060 -220 1120 -220 {lab=vref}
+N 960 -430 960 -220 {lab=vref}
+N 900 -210 900 -160 {lab=vref}
+N 900 -210 960 -210 {lab=vref}
+N 960 -220 960 -210 {lab=vref}
+N 440 -60 550 -60 {lab=vref}
+N 550 -70 550 -60 {lab=vref}
+N 550 -70 570 -70 {lab=vref}
+N 570 -70 570 -60 {lab=vref}
+N 570 -60 1060 -60 {lab=vref}
+N 1060 -220 1060 -60 {lab=vref}
+N 960 -220 1060 -220 {lab=vref}
+C {lab_wire.sym} 180 -160 0 0 {name=p1 sig_type=std_logic lab=gd}
 C {ipin.sym} 0 -10 0 0 {name=p13 lab=gd}
-C {ipin.sym} 0 -490 0 0 {name=p14 lab=vp}
-C {lab_wire.sym} 500 -420 0 1 {name=p15 sig_type=std_logic lab=vp}
-C {opin.sym} 860 -240 0 0 {name=p10 lab=vref}
-C {lab_wire.sym} 900 -420 0 1 {name=p17 sig_type=std_logic lab=vp}
-C {lab_wire.sym} 700 -200 0 1 {name=p7 sig_type=std_logic lab=gd}
-C {lab_wire.sym} 700 -280 0 1 {name=p8 sig_type=std_logic lab=gd}
-C {lab_wire.sym} 700 -420 0 1 {name=p9 sig_type=std_logic lab=vp}
-C {sg13cmos5l_pr/sg13_hv_nmos.sym} 220 -80 0 0 {name=M1
+C {ipin.sym} 0 -510 0 0 {name=p14 lab=vp}
+C {opin.sym} 1120 -220 0 0 {name=p10 lab=vref}
+C {sg13cmos5l_pr/sg13_hv_nmos.sym} 260 -160 0 1 {name=M1
 l=0.9u
-w=1.2u
-ng=1
-m=8
-model=sg13_hv_nmos
-spiceprefix=X
-}
-C {sg13cmos5l_pr/sg13_hv_nmos.sym} 220 -200 0 0 {name=M2
-l=0.9u
-w=1.2u
-ng=1
-m=8
-model=sg13_hv_nmos
-spiceprefix=X
-}
-C {sg13cmos5l_pr/sg13_hv_nmos.sym} 220 -280 0 0 {name=M3
-l=0.9u
-w=1.2u
-ng=1
-m=24
-model=sg13_hv_nmos
-spiceprefix=X
-}
-C {sg13cmos5l_pr/sg13_hv_pmos.sym} 220 -420 0 0 {name=M4
-l=1.8u
-w=1.2u
-ng=1
-m=8
-model=sg13_hv_pmos
-spiceprefix=X
-}
-C {sg13cmos5l_pr/sg13_hv_nmos.sym} 420 -200 0 0 {name=M5
-l=0.9u
-w=1.2u
-ng=1
-m=8
-model=sg13_hv_nmos
-spiceprefix=X
-}
-C {sg13cmos5l_pr/sg13_hv_nmos.sym} 420 -280 0 0 {name=M6
-l=0.9u
-w=1.2u
-ng=1
-m=16
-model=sg13_hv_nmos
-spiceprefix=X
-}
-C {sg13cmos5l_pr/sg13_hv_pmos.sym} 420 -420 0 0 {name=M7
-l=1.8u
 w=1.2u
 ng=1
 m=2
-model=sg13_hv_pmos
+model=sg13_hv_nmos
 spiceprefix=X
 }
-C {sg13cmos5l_pr/sg13_hv_nmos.sym} 620 -200 0 0 {name=M8
+C {lab_wire.sym} 460 -160 0 1 {name=p2 sig_type=std_logic lab=gd}
+C {sg13cmos5l_pr/sg13_hv_nmos.sym} 380 -160 0 0 {name=M2
 l=0.9u
 w=1.2u
 ng=1
@@ -176,35 +135,120 @@ m=8
 model=sg13_hv_nmos
 spiceprefix=X
 }
-C {sg13cmos5l_pr/sg13_hv_nmos.sym} 620 -280 0 0 {name=M9
+C {lab_wire.sym} 340 -60 0 0 {name=p3 sig_type=std_logic lab=gd}
+C {sg13cmos5l_pr/sg13_hv_nmos.sym} 420 -60 0 1 {name=M7
 l=0.9u
-w=1.2u
-ng=1
-m=16
-model=sg13_hv_nmos
-spiceprefix=X
-}
-C {sg13cmos5l_pr/sg13_hv_pmos.sym} 620 -420 0 0 {name=M10
-l=1.8u
-w=1.2u
-ng=1
-m=2
-model=sg13_hv_pmos
-spiceprefix=X
-}
-C {sg13cmos5l_pr/sg13_hv_pmos.sym} 820 -420 0 0 {name=M11
-l=1.8u
 w=1.2u
 ng=1
 m=4
+model=sg13_hv_nmos
+spiceprefix=X
+}
+C {lab_wire.sym} 180 -260 0 0 {name=p4 sig_type=std_logic lab=gd}
+C {sg13cmos5l_pr/sg13_hv_nmos.sym} 260 -260 0 1 {name=M3
+l=0.9u
+w=1.2u
+ng=1
+m=2
+model=sg13_hv_nmos
+spiceprefix=X
+}
+C {lab_wire.sym} 460 -260 0 1 {name=p5 sig_type=std_logic lab=gd}
+C {sg13cmos5l_pr/sg13_hv_nmos.sym} 380 -260 0 0 {name=M4
+l=0.9u
+w=1.2u
+ng=1
+m=8
+model=sg13_hv_nmos
+spiceprefix=X
+}
+C {lab_wire.sym} 460 -460 0 1 {name=p7 sig_type=std_logic lab=vp}
+C {sg13cmos5l_pr/sg13_hv_pmos.sym} 380 -460 0 0 {name=M6
+l=0.9u
+w=1.2u
+ng=1
+m=2
 model=sg13_hv_pmos
 spiceprefix=X
 }
-C {sg13cmos5l_pr/sg13_hv_pmos.sym} 100 -420 0 1 {name=M12
-l=1.8u
+C {lab_wire.sym} 180 -460 0 0 {name=p8 sig_type=std_logic lab=vp}
+C {sg13cmos5l_pr/sg13_hv_pmos.sym} 260 -460 0 1 {name=M5
+l=0.9u
 w=1.2u
 ng=1
-m=16
+m=2
+model=sg13_hv_pmos
+spiceprefix=X
+}
+C {lab_wire.sym} 620 -460 0 1 {name=p6 sig_type=std_logic lab=vp}
+C {sg13cmos5l_pr/sg13_hv_pmos.sym} 540 -460 0 0 {name=M10
+l=0.9u
+w=1.2u
+ng=1
+m=2
+model=sg13_hv_pmos
+spiceprefix=X
+}
+C {lab_wire.sym} 620 -160 0 1 {name=p9 sig_type=std_logic lab=gd}
+C {sg13cmos5l_pr/sg13_hv_nmos.sym} 540 -160 0 0 {name=M8
+l=0.9u
+w=1.2u
+ng=1
+m=20
+model=sg13_hv_nmos
+spiceprefix=X
+}
+C {lab_wire.sym} 620 -260 0 1 {name=p11 sig_type=std_logic lab=gd}
+C {sg13cmos5l_pr/sg13_hv_nmos.sym} 540 -260 0 0 {name=M9
+l=0.9u
+w=1.2u
+ng=1
+m=12
+model=sg13_hv_nmos
+spiceprefix=X
+}
+C {lab_wire.sym} 820 -460 0 1 {name=p12 sig_type=std_logic lab=vp}
+C {sg13cmos5l_pr/sg13_hv_pmos.sym} 740 -460 0 0 {name=M13
+l=0.9u
+w=1.2u
+ng=1
+m=2
+model=sg13_hv_pmos
+spiceprefix=X
+}
+C {lab_wire.sym} 820 -160 0 1 {name=p15 sig_type=std_logic lab=gd}
+C {sg13cmos5l_pr/sg13_hv_nmos.sym} 740 -160 0 0 {name=M11
+l=0.9u
+w=1.2u
+ng=1
+m=20
+model=sg13_hv_nmos
+spiceprefix=X
+}
+C {lab_wire.sym} 820 -260 0 1 {name=p16 sig_type=std_logic lab=gd}
+C {sg13cmos5l_pr/sg13_hv_nmos.sym} 740 -260 0 0 {name=M12
+l=0.9u
+w=1.2u
+ng=1
+m=10
+model=sg13_hv_nmos
+spiceprefix=X
+}
+C {lab_wire.sym} 1020 -160 0 1 {name=p17 sig_type=std_logic lab=gd}
+C {sg13cmos5l_pr/sg13_hv_nmos.sym} 940 -160 0 0 {name=M14
+l=0.9u
+w=1.2u
+ng=1
+m=8
+model=sg13_hv_nmos
+spiceprefix=X
+}
+C {lab_wire.sym} 1020 -460 0 1 {name=p18 sig_type=std_logic lab=vp}
+C {sg13cmos5l_pr/sg13_hv_pmos.sym} 940 -460 0 0 {name=M15
+l=0.9u
+w=1.2u
+ng=1
+m=2
 model=sg13_hv_pmos
 spiceprefix=X
 }

@@ -5,8 +5,7 @@ VP vp gd xvp
 .save i(vp)
 VSUB gd sub! 0
 C1 v_ref gd 1p
-x1 vp v_ref gd vd bandgap_selfbias_core
-XQ1 gd gd vd pnpMPA a=1e-12 p=4e-06
+x1 vp v_ref gd bandgap_selfbias_core
 **** begin user architecture code
 
 
@@ -35,26 +34,28 @@ XQ1 gd gd vd pnpMPA a=1e-12 p=4e-06
 **** end user architecture code
 **.ends
 
-* expanding   symbol:  /foss/designs/test/circuit/bandgap_selfbias_core.sym # of pins=4
+* expanding   symbol:  /foss/designs/test/circuit/bandgap_selfbias_core.sym # of pins=3
 ** sym_path: /foss/designs/test/circuit/bandgap_selfbias_core.sym
 ** sch_path: /foss/designs/test/circuit/bandgap_selfbias_core.sch
-.subckt bandgap_selfbias_core vp vref gd diode
-*.opin diode
+.subckt bandgap_selfbias_core vp vref gd
 *.ipin gd
 *.ipin vp
 *.opin vref
-XM1 net1 net1 gd gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=8
-XM2 net2 diode net1 gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=8
-XM3 net4 diode net2 gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=24
-XM4 net4 net4 vp vp sg13_hv_pmos w=1.2u l=1.8u ng=1 m=8
-XM5 net5 net3 net2 gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=8
-XM6 net3 net3 net5 gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=16
-XM7 net3 net4 vp vp sg13_hv_pmos w=1.2u l=1.8u ng=1 m=2
-XM8 vref net6 net5 gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=8
-XM9 net6 net6 vref gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=16
-XM10 net6 net4 vp vp sg13_hv_pmos w=1.2u l=1.8u ng=1 m=2
-XM11 vref net4 vp vp sg13_hv_pmos w=1.2u l=1.8u ng=1 m=4
-XM12 diode net4 vp vp sg13_hv_pmos w=1.2u l=1.8u ng=1 m=16
+XM1 net1 net1 gd gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=2
+XM2 net4 net1 net5 gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=8
+XM7 net5 vref gd gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=4
+XM3 net2 net2 net1 gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=2
+XM4 net3 net2 net4 gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=8
+XM6 net3 net3 vp vp sg13_hv_pmos w=1.2u l=0.9u ng=1 m=2
+XM5 net2 net3 vp vp sg13_hv_pmos w=1.2u l=0.9u ng=1 m=2
+XM10 net6 net3 vp vp sg13_hv_pmos w=1.2u l=0.9u ng=1 m=2
+XM8 net7 net6 gd gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=20
+XM9 net6 net6 net7 gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=12
+XM13 net8 net3 vp vp sg13_hv_pmos w=1.2u l=0.9u ng=1 m=2
+XM11 net9 net8 net7 gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=20
+XM12 net8 net8 net9 gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=10
+XM14 vref vref net9 gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=8
+XM15 vref net3 vp vp sg13_hv_pmos w=1.2u l=0.9u ng=1 m=2
 .ends
 
 .GLOBAL sub!

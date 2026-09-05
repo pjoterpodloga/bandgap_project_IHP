@@ -26,13 +26,6 @@ for rw in raw_files:
     parse_ngspice_raw(rw)
 
     v_ref = Signal.get_signal("v(v_ref)")
-    v_vd = Signal.get_signal("v(vd)")
-
-
-    deriv_v_dr = Signal.derivative(v_vd)
-    deriv_v_dr = Signal.value_at(deriv_v_dr)
-
-    print(f"deriv_v_dr: {get_value_with_prefix(deriv_v_dr)}")
 
     v_ref_at_25C = Signal.value_at(v_ref, 25)
     v_ref_max = Signal.ymax(v_ref)
