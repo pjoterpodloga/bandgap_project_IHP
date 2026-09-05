@@ -1,0 +1,7 @@
+# Corner gen file for bandgap_selfbias_core_temp_sweep_tb
+lib cornerMOShv.lib
+lib cornerPNP.lib
+param  xvp
+mc 300
+corner_gen [mos_tt_stat] [typ] [1.8]
+#corner_gen [mos_ss,mos_sf,mos_fs,mos_ff] [bcs,wcs] [1.62, 1.8, 1.99]
