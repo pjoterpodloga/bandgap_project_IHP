@@ -1,0 +1,4 @@
+lib cornerMOShv.lib
+lib cornerPNP.lib
+param xvp
+0: mos_tt_stat typ 1.8
