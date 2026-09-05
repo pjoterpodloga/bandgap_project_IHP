@@ -12,6 +12,7 @@ raw_files = sorted(glob.glob("*.raw_*"), key=sorter)
 v_ref_result        = [0.]*len(raw_files)
 t_setup_bg_result   = [0.]*len(raw_files)
 t_setup_gm_result   = [0.]*len(raw_files)
+p_supply_result     = [0.]*len(raw_files)
 
 for rw in raw_files:
 
@@ -30,6 +31,7 @@ for rw in raw_files:
     v_d1 = Signal.get_signal("v(vd1)")
     v_d8 = Signal.get_signal("v(vd8)")
     v_bias = Signal.get_signal("v(vbias)")
+    i_vp = Signal.get_signal("i(vp)")
 
     vp = Signal.value_at(v_vp, tend_meas)
 
@@ -44,27 +46,31 @@ for rw in raw_files:
     t_setup_bg = t_ready_bg - t_delay
     t_setup_gm = t_ready_gm - t_delay
 
+    i_vp_tend = Signal.value_at(i_vp, tend_meas)
+
+    p_supply = vp * i_vp_tend
+
     v_ref_result[corner_number] = v_ref_tend
     t_setup_bg_result[corner_number] = t_setup_bg
     t_setup_gm_result[corner_number] = t_setup_gm
+    p_supply_result[corner_number] = p_supply
 
     plt.figure(tight_layout=True)
     plt.plot(Signal.get_x_axis()*1e6, v_vp)
     plt.plot(Signal.get_x_axis()*1e6, v_ref)
     plt.plot(Signal.get_x_axis()*1e6, v_bias)
-    plt.plot(Signal.get_x_axis()*1e6, v_d1)
-    plt.plot(Signal.get_x_axis()*1e6, v_d8)
     plt.axhline(y=1.2, color='g', linestyle='--')
     plt.grid(True)
-    plt.title("Symulacja rozruchu układu napięcia referencyjnego w czasie")
+    plt.title("Symulacja czasowa rozruchu układu źródła napięcia referencyjnego")
     plt.ylabel("Napięcie [V]")
     plt.xlabel("Czas [us]")
-    plt.legend(["vp", "v_ref", "bias", "d1", "d8"])
+    plt.legend(["Napięcie zasilania", "Napięcie referencyjne", "Napięcie polaryzujące"])
     plt.savefig(f"plot_{corner_number}.png")
 
 
 data = {"v_ref" : v_ref_result,
         "t_setup_bg": t_setup_bg_result,
-        "t_setup_gm": t_setup_gm_result}
+        "t_setup_gm": t_setup_gm_result,
+        "p_supply" : p_supply_result}
 df = pd.DataFrame(data)
 df.to_csv("measure.csv")
