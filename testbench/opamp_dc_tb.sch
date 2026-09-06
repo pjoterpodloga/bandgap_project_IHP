@@ -7,11 +7,11 @@ F {}
 E {}
 N 1080 -210 1080 -180 {lab=gd}
 N 1060 -210 1060 -180 {lab=bias}
-N 1080 -380 1080 -350 {lab=vp}
+N 1080 -380 1080 -350 {lab=#net1}
 N 920 -250 920 -200 {lab=inm}
 N 800 -310 800 -200 {lab=inp}
-N 920 -140 920 -100 {lab=#net1}
-N 800 -140 800 -100 {lab=#net1}
+N 920 -140 920 -100 {lab=#net2}
+N 800 -140 800 -100 {lab=#net2}
 N 920 -250 1000 -250 {lab=inm}
 N 960 -190 980 -190 {lab=in}
 N 960 -150 980 -150 {lab=gd}
@@ -29,22 +29,23 @@ N 140 -140 230 -140 {lab=gd}
 N 320 -280 320 -240 {lab=in}
 N 230 -140 320 -140 {lab=gd}
 N 320 -180 320 -140 {lab=gd}
-N 860 -100 920 -100 {lab=#net1}
-N 860 -100 860 -80 {lab=#net1}
-N 800 -100 860 -100 {lab=#net1}
+N 860 -100 920 -100 {lab=#net2}
+N 860 -100 860 -80 {lab=#net2}
+N 800 -100 860 -100 {lab=#net2}
 N 860 -20 860 0 {lab=gd}
 N 1180 -280 1250 -280 {lab=out}
 N 520 -380 520 -330 {lab=vp}
 N 520 -110 520 0 {lab=gd}
-N 650 -260 740 -260 {lab=#net2}
-N 740 -290 740 -260 {lab=#net2}
+N 650 -260 740 -260 {lab=#net3}
+N 740 -290 740 -260 {lab=#net3}
 N 740 -370 740 -350 {lab=bias}
 N 800 -310 1000 -310 {lab=inp}
-N 650 -280 680 -280 {lab=#net3}
-N 650 -240 680 -240 {lab=#net4}
+N 650 -280 680 -280 {lab=#net4}
+N 650 -240 680 -240 {lab=#net5}
+N 1080 -470 1080 -440 {lab=vp}
 C {lab_wire.sym} 1060 -180 3 1 {name=p4 sig_type=std_logic lab=bias}
 C {lab_wire.sym} 1080 -180 3 1 {name=p5 sig_type=std_logic lab=gd}
-C {lab_wire.sym} 1080 -380 3 0 {name=p6 sig_type=std_logic lab=vp}
+C {lab_wire.sym} 1080 -470 3 0 {name=p6 sig_type=std_logic lab=vp}
 C {vcvs.sym} 800 -170 0 0 {name=EINP value=0.5}
 C {vcvs.sym} 920 -170 0 1 {name=EINM value=-0.5}
 C {lab_wire.sym} 980 -310 0 0 {name=p7 sig_type=std_logic lab=inp}
@@ -76,7 +77,7 @@ C {vsource.sym} 740 -320 0 0 {name=Vibias value=0 savecurrent=true}
 C {lab_wire.sym} 740 -370 3 0 {name=p2 sig_type=std_logic lab=bias}
 C {lab_wire.sym} 520 -370 3 0 {name=p3 sig_type=std_logic lab=vp}
 C {/foss/designs/test/circuit/const_gm_bias.sym} 430 -130 0 0 {name=x2}
-C {netlist.sym} 10 -840 0 0 {name=s1 
+C {netlist.sym} 10 -720 0 0 {name=s1 
 value="
 .lib cornerMOShv.lib mos_tt
 .lib cornerRES.lib res_typ
@@ -91,6 +92,7 @@ value="
 .save v(out)
 .save i(vibias)
 .save v(vp)
+.save i(viopamp)
 
 .temp 'xtemp'
 .dc VIN -10m 10m 100u
@@ -100,3 +102,4 @@ value="
 C {noconn.sym} 680 -280 2 0 {name=l2}
 C {noconn.sym} 680 -240 2 0 {name=l3}
 C {/foss/designs/test/circuit/opamp_folded_pmos.sym} 1000 -310 0 0 {name=x1}
+C {vsource.sym} 1080 -410 0 0 {name=Viopamp value=0 savecurrent=true}

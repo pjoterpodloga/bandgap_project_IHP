@@ -1,21 +1,22 @@
-** sch_path: /foss/designs/test/testbench/opamp_dc_tb.sch
-**.subckt opamp_dc_tb
-EINP inp net2 in gd 0.5
-EINM inm net2 in gd -0.5
+** sch_path: /foss/designs/test/testbench/opamp_ac_tb.sch
+**.subckt opamp_ac_tb
+EINP net2 net3 in gd 0.5
+EINM inm net3 in gd -0.5
 C1 out gd xcload
 VGD gd 0 0
 VP vp gd xvp
 VSUB gd sub! 0
-VIN in gd DC xvid
-VCM net2 gd '0.7'
-Vibias bias net3 0
+VIN in gd DC=xvid AC=1
+VCM net3 gd '0.7'
+Vibias bias net4 0
 .save i(vibias)
-x2 vp net3 gd net4 net5 const_gm_bias
-* noconn #net4
+x2 vp net4 gd net5 net6 const_gm_bias
 * noconn #net5
+* noconn #net6
 x1 net1 inp inm out bias gd opamp_folded_pmos
 Viopamp vp net1 0
 .save i(viopamp)
+VIN1 inp net2 DC='vioff' AC=0
 **** begin user architecture code
 
 
@@ -26,16 +27,17 @@ Viopamp vp net1 0
 .param xvid=0
 .param xcload=1p
 
+.param vioff='from_variant'
+.param xvioff='vioff'
+
 .param xtemp=25
 
 .save v(in)
 .save v(out)
-.save i(vibias)
 .save v(vp)
-.save i(viopamp)
 
 .temp 'xtemp'
-.dc VIN -10m 10m 100u
+.ac DEC 101 1 1G
 
 .option rshunt=1e12
 

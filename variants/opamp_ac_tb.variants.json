@@ -1,0 +1,17 @@
+[
+    {
+        "testbench": "opamp_dc_tb",
+        "match": [
+            "xvp",
+            "xtemp",
+            "cornerMOShv.lib",
+            "cornerRES.lib"
+        ],
+        "replace": [
+            []
+        ],
+        "insert": [
+            "vioff"
+        ]
+    }
+]

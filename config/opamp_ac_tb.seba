@@ -1,0 +1,10 @@
+NAME            opamp_ac_tb
+
+CONTROL         opamp_ac_tb.control
+TESTBENCH       opamp_ac_tb.sch
+CORNERS         opamp_dc_tb.corner_gen
+VARIANTS        opamp_ac_tb.variants.json
+SCRIPT          opamp_ac_tb.py
+MEAS            opamp_ac_tb.meas
+
+PLOT            plot.template.plt

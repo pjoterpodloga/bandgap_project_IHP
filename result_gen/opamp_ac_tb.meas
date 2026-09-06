@@ -1,0 +1,6 @@
+# opamp_ac_tb
+# meas_name    |    min_spec    |   max_spec    |   unit    |   prefix  |   description
+a_dc                60              None            dB          None        "dc voltage gain"
+f_3db               None            None            Hz          k           "Opamp bandwidth"
+f_0                 None            None            Hz          M           "Frequency for 0dB"
+pm                  60              None            deg         None        "Phase margin"
