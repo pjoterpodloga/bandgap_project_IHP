@@ -1,0 +1,6 @@
+.control
+run
+save all
+set filetype=ascii
+write bandgap_selfbias_startup_tb.raw all
+.endc

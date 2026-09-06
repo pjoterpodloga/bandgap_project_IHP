@@ -1,0 +1,9 @@
+# Corner gen file for bandgap_res_startup_tb
+lib cornerMOShv.lib
+lib cornerRES.lib
+lib cornerPNP.lib
+param xvp
+param xtemp
+corner_gen [mos_tt] [res_typ] [typ] [1.8] [25]
+corner_gen [mos_tt] [res_typ] [typ] [1.8] [-55, 0, 125]
+corner_gen [mos_ss,mos_sf,mos_fs,mos_ff] [res_bcs,res_wcs] [bcs,wcs] [1.62, 1.8, 1.98] [-55, 0, 25, 125]

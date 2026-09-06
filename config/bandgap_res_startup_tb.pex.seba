@@ -10,4 +10,4 @@ MEAS            bandgap_res_startup_tb.meas
 
 PLOT            plot.template.plt
 
-EXTRACTION      bandgap_res_core_wrapper.pex.spice
+EXTRACTION      bandgap_selfbias_core.pex.spice

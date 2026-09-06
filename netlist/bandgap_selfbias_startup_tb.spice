@@ -1,34 +1,28 @@
-** sch_path: /foss/designs/test/testbench/bandgap_selfbias_core_temp_sweep_tb.sch
-**.subckt bandgap_selfbias_core_temp_sweep_tb
+** sch_path: /foss/designs/test/testbench/bandgap_selfbias_startup_tb.sch
+**.subckt bandgap_selfbias_startup_tb
 VGD gd 0 0
-VP vp gd xvp
-.save i(vp)
 VSUB gd sub! 0
-C1 v_ref gd 1p
-x1 vp v_ref gd bandgap_selfbias_core
+VP vp gd PWL(0 0 'xdelay' 0 'xdelay+1n' 'xvp')
+C1 out gd 1f
+x1 vp out gd bandgap_selfbias_core
 **** begin user architecture code
 
 
 .lib cornerMOShv.lib mos_tt
+.lib cornerRES.lib res_typ
 .lib cornerPNP.lib typ
 
-.param xvp=1.2
-
+.param xvp=1.8
 .param xtemp=25
+.param xdelay=200n
 
-.probe isub(x1)
-.save v(v_ref)
+.save v(out)
 .save v(vp)
-.save v(vd)
-.save v(start_up)
 .save i(vp)
-.save i(vibias)
-*.save all
-
-*.options rshunt=1G
 
 .temp 'xtemp'
-.dc temp -50 125 0.1
+
+.tran 1n 3.2u uic
 
 
 **** end user architecture code
