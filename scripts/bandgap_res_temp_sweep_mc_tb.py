@@ -94,23 +94,38 @@ for rw in raw_files:
 
 v_ref_avg = np.mean(v_ref_avg_result)
 v_ref_std = np.std(v_ref_avg_result)
+v_ref_max = np.max(v_ref_avg_result)
+v_ref_min = np.min(v_ref_avg_result)
+
+max_sigma = int(np.floor(np.abs((v_ref_max - v_ref_avg)/v_ref_std)))
+min_sigma = int(np.floor(np.abs((v_ref_min - v_ref_avg)/v_ref_std)))
 
 print(f"Wartość średnia v_ref: {v_ref_avg}")
 print(f"Odchylenie standardowe v_ref: {v_ref_std}")
 
 plt.figure(tight_layout=True)
 plt.hist(v_ref_avg_result, bins=10, edgecolor="black")
+
+for it_ms in range(max_sigma):
+    index = it_ms + 1
+    plt.axvline(x=v_ref_avg+index*v_ref_std, color='red', linestyle='--')
+    plt.text(v_ref_avg+index*v_ref_std, 0.5, f"{index}$\\sigma$", transform=plt.gca().get_xaxis_transform(), ha="center", va="center")
+for it_ms in range(min_sigma):
+    index = it_ms + 1
+    plt.axvline(x=v_ref_avg-index*v_ref_std, color='red', linestyle='--')
+    plt.text(v_ref_avg-index*v_ref_std, 0.5, f"{index}$\\sigma$", transform=plt.gca().get_xaxis_transform(), ha="center", va="center")
+
 plt.grid(True)
 plt.title("Histogram rozrzutu generowanego napięcia referencyjnego")
 plt.ylabel("Ilość próbek")
 plt.xlabel("Napięcie [V]")
 
 plt.text(
-    0.05, 0.95,
+    0.02, 0.98,
     f"Średnia = {v_ref_avg:.3f} V\n"
-    f"Odchylenie stand. = {v_ref_std*1e3:.3f} mV",
+    f"Odchylenie\nstandardowe = {v_ref_std*1e3:.3f} mV",
     transform=plt.gca().transAxes,
-    ha="right",
+    ha="left",
     va="top",
     bbox=dict(
         boxstyle="round",
