@@ -44,21 +44,21 @@ x1 vp v_ref gd bandgap_selfbias_core
 XM1 net1 net1 gd gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=2
 XM2 net4 net1 net5 gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=8
 XM7 net5 vref gd gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=4
-XM3 net2 net2 net1 gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=2
-XM4 net3 net2 net4 gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=8
-XM6 net3 net3 vp vp sg13_hv_pmos w=1.2u l=0.9u ng=1 m=2
-XM5 net2 net3 vp vp sg13_hv_pmos w=1.2u l=0.9u ng=1 m=2
-XM10 net6 net3 vp vp sg13_hv_pmos w=1.2u l=0.9u ng=1 m=2
+XM3 net3 net2 net1 gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=2
+XM4 net2 net2 net4 gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=8
+XM6 net2 net3 vp vp sg13_hv_pmos w=1.2u l=0.9u ng=1 m=2
+XM5 net3 net3 vp vp sg13_hv_pmos w=1.2u l=0.9u ng=1 m=2
+XM10 net6 net2 vp vp sg13_hv_pmos w=1.2u l=0.9u ng=1 m=2
 XM8 net7 net6 gd gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=20
 XM9 net6 net6 net7 gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=12
-XM13 net8 net3 vp vp sg13_hv_pmos w=1.2u l=0.9u ng=1 m=2
+XM13 net8 net2 vp vp sg13_hv_pmos w=1.2u l=0.9u ng=1 m=2
 XM11 net9 net8 net7 gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=20
 XM12 net8 net8 net9 gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=10
 XM14 vref vref net9 gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=8
-XM15 vref net3 vp vp sg13_hv_pmos w=1.2u l=0.9u ng=1 m=2
-XM16 stup net2 gd gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=2
+XM15 vref net2 vp vp sg13_hv_pmos w=1.2u l=0.9u ng=1 m=2
+XM16 stup net3 gd gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=2
 XM17 stup gd vp vp sg13_hv_pmos w=1.2u l=4.0u ng=1
-XM18 net3 stup gd gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=2
+XM18 net2 stup gd gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=2
 .ends
 
 .GLOBAL sub!
