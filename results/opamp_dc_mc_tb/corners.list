@@ -1,0 +1,4 @@
+lib cornerMOShv.lib
+param xvp
+param xtemp
+0: mos_tt_stat 3.3 25

@@ -7,9 +7,10 @@ TESTBENCH       bandgap_res_temp_sweep_tb.sch
 
 CORNERS         bandgap_res_temp_sweep_tb.corner_gen
 
-SCRIPT          bandgap_res_temp_sweep_tb.py
+SCRIPT          bandgap_res_temp_sweep_tb.py bandgap_res_temp_sweep_tb_comp.py
 MEAS            bandgap_res_temp_sweep_tb.meas
 
 PLOT            plot.template.plt
 
 EXTRACTION      bandgap_res_core_wrapper.pex.spice
+#EXTRACTION      bandgap_res_core_wrapper.pex.mod.spice
