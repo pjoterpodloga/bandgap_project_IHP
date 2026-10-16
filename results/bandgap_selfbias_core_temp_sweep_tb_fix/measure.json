@@ -1,0 +1,50 @@
+[
+  {
+    "name": "v_ref_min",
+    "max": "1.25",
+    "min": "1.15",
+    "unit": "V",
+    "prefix": "None",
+    "description": "Minimal of output reference voltage"
+  },
+  {
+    "name": "v_ref_max",
+    "max": "1.25",
+    "min": "1.15",
+    "unit": "V",
+    "prefix": "None",
+    "description": "Maximum of output reference voltage"
+  },
+  {
+    "name": "v_ref_sub",
+    "max": "5",
+    "min": "None",
+    "unit": "V",
+    "prefix": "m",
+    "description": "Spread of output reference voltage"
+  },
+  {
+    "name": "v_ref_at_25C",
+    "max": "1.22",
+    "min": "1.18",
+    "unit": "V",
+    "prefix": "None",
+    "description": "Output refernece voltage at 25C"
+  },
+  {
+    "name": "v_ref_avg",
+    "max": "1.22",
+    "min": "1.18",
+    "unit": "V",
+    "prefix": "None",
+    "description": "Average of output reference voltage"
+  },
+  {
+    "name": "temp_coeff",
+    "max": "25",
+    "min": "None",
+    "unit": "ppm",
+    "prefix": "None",
+    "description": "Temperature coefficient of output reference voltage"
+  }
+]
