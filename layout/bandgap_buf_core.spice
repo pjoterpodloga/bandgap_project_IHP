@@ -1,0 +1,49 @@
+** sch_path: /foss/designs/test/circuit/bandgap_buf_core.sch
+.SUBCKT bandgap_buf_core vp vref_res vref_sb vbias vout gd sel sel_n
+*.PININFO vbias:I gd:I vp:I vref_res:I vref_sb:I vout:O sel:I sel_n:I
+x1 vp vbuf vout vg vbias gd opamp_folded_pmos_buf
+x2 vbuf vref_res sel_n sel vp gd bandgap_bufor_tg
+x3 vbuf vref_sb sel sel_n vp gd bandgap_bufor_tg
+MM1 vp vg vout gd sg13_hv_nmos w=2.4u l=0.45u ng=1 m=8
+RRBLEED vout gd 6.306k $SUB=sub! $[rppd] w=0.5e-6 l=12e-6 b=0
+.ENDS
+
+* expanding   symbol:  /foss/designs/test/circuit/opamp_folded_pmos_buf.sym # of pins=6
+** sym_path: /foss/designs/test/circuit/opamp_folded_pmos_buf.sym
+** sch_path: /foss/designs/test/circuit/opamp_folded_pmos_buf.sch
+.SUBCKT opamp_folded_pmos_buf vp inp inm out vbias gd
+*.PININFO vbias:I inp:I inm:I out:O gd:I vp:I
+MM12 bias4 vbias gd gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=2
+MM13 bias4 bias4 vp vp sg13_hv_pmos w=3.6u l=0.9u ng=1 m=2
+MM11 pair_com bias4 vp vp sg13_hv_pmos w=3.6u l=0.9u ng=1 m=4
+MM1 inp_fold inp pair_com vp sg13_hv_pmos w=2.4u l=0.9u ng=1 m=12
+MM2 inm_fold inm pair_com vp sg13_hv_pmos w=2.4u l=0.9u ng=1 m=12
+MM9 tele_m tele_g vp vp sg13_hv_pmos w=3.6u l=0.9u ng=1 m=2
+MM10 tele_p tele_g vp vp sg13_hv_pmos w=3.6u l=0.9u ng=1 m=2
+MM7 tele_g bias3 tele_m vp sg13_hv_pmos w=3.6u l=0.9u ng=1 m=2
+MM8 out bias3 tele_p vp sg13_hv_pmos w=3.6u l=0.9u ng=1 m=2
+MM3 inp_fold vbias gd gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=4
+MM4 inm_fold vbias gd gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=4
+MM5 tele_g bias2 inp_fold gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=2
+MM6 out bias2 inm_fold gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=2
+MM14 bias3 vbias gd gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=4
+MM15 bias3 bias3 net1 vp sg13_hv_pmos w=3.6u l=0.9u ng=1
+MM16 net1 bias3 vp vp sg13_hv_pmos w=3.6u l=0.9u ng=1
+MM19 bias2 bias4 vp vp sg13_hv_pmos w=3.6u l=0.9u ng=1 m=4
+MM17 net2 bias2 gd gd sg13_hv_nmos w=1.2u l=0.9u ng=1
+MM18 bias2 bias2 net2 gd sg13_hv_nmos w=1.2u l=0.9u ng=1
+MM20 bias2 gd gd gd sg13_hv_nmos w=1.2u l=0.9u ng=1
+MM21 pair_com vp vp vp sg13_hv_pmos w=2.4u l=0.9u ng=1 m=2
+MM22 bias3 vp vp vp sg13_hv_pmos w=3.6u l=0.9u ng=1
+.ENDS
+
+
+* expanding   symbol:  /foss/designs/test/circuit/bandgap_bufor_tg.sym # of pins=6
+** sym_path: /foss/designs/test/circuit/bandgap_bufor_tg.sym
+** sch_path: /foss/designs/test/circuit/bandgap_bufor_tg.sch
+.SUBCKT bandgap_bufor_tg t2 t1 en_n en vp gd
+*.PININFO en_n:I en:I vp:I gd:I t2:B t1:B
+MM1 t2 en t1 gd sg13_hv_nmos w=1.2u l=0.9u ng=1 m=2
+MM2 t2 en_n t1 vp sg13_hv_pmos w=1.2u l=0.9u ng=1 m=2
+.ENDS
+

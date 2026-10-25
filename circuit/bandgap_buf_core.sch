@@ -27,10 +27,8 @@ N 110 -170 110 -150 {lab=gd}
 N 420 -490 420 -350 {lab=vp}
 N 180 -310 180 -210 {lab=vbuf}
 N 0 -210 40 -210 {lab=vref_sb}
-N 560 -280 580 -280 {lab=vg}
 N 620 -250 620 -130 {lab=vout}
 N 620 -490 620 -310 {lab=vp}
-N 560 -490 620 -490 {lab=vp}
 N 0 -330 20 -330 {lab=sel}
 N 0 -290 20 -290 {lab=sel_n}
 N 420 -120 420 -20 {lab=gd}
@@ -45,10 +43,8 @@ N 560 -40 560 -20 {lab=gd}
 N 420 -20 560 -20 {lab=gd}
 N 560 -130 560 -100 {lab=vout}
 N 280 -130 560 -130 {lab=vout}
-N 560 -490 560 -400 {lab=vp}
-N 420 -490 560 -490 {lab=vp}
-N 560 -340 560 -280 {lab=vg}
-N 520 -280 560 -280 {lab=vg}
+N 420 -490 620 -490 {lab=vp}
+N 520 -280 580 -280 {lab=vg}
 C {/foss/designs/test/circuit/opamp_folded_pmos_buf.sym} 340 -310 0 0 {name=x1}
 C {ipin.sym} 360 -170 0 0 {name=p1 lab=vbias}
 C {ipin.sym} 0 -20 0 0 {name=p2 lab=gd}
@@ -88,12 +84,4 @@ spiceprefix=X
 b=0
 m=1
 value="expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )"
-}
-C {sg13cmos5l_pr/cap_mfringe.sym} 560 -370 0 0 {name=C1
-model=cap_mfringe
-w=7.96u
-l=18.0u
-mmin=1
-mmax=2
-spiceprefix=X
 }
