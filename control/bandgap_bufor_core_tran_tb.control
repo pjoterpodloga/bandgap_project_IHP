@@ -1,0 +1,6 @@
+.control
+run
+save all
+set filetype=ascii
+write bandgap_bufor_core_tran_tb.raw all
+.endc

@@ -1,10 +1,10 @@
 
-NAME           bandgap_selfbias_core_temp_sweep_tb
+NAME           bandgap_selfbias_core_temp_sweep_tb_test
 
 CONTROL        bandgap_selfbias_core_temp_sweep_tb.control
 TESTBENCH      bandgap_selfbias_core_temp_sweep_tb.sch
 CORNERS        bandgap_selfbias_core_temp_sweep_tb.corner_gen
-SCRIPT         bandgap_selfbias_core_temp_sweep_tb.py
+SCRIPT         bandgap_selfbias_core_temp_sweep_tb.py bandgap_selfbias_core_temp_sweep_tb_comp.py
 MEAS           bandgap_selfbias_core_temp_sweep_tb.meas
 
 PLOT           plot.template.plt

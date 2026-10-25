@@ -1,0 +1,34 @@
+[
+  {
+    "name": "a_dc",
+    "max": "None",
+    "min": "60",
+    "unit": "dB",
+    "prefix": "None",
+    "description": "dc voltage gain"
+  },
+  {
+    "name": "f_3db",
+    "max": "None",
+    "min": "None",
+    "unit": "Hz",
+    "prefix": "k",
+    "description": "Opamp bandwidth"
+  },
+  {
+    "name": "f_0",
+    "max": "None",
+    "min": "None",
+    "unit": "Hz",
+    "prefix": "M",
+    "description": "Frequency for 0dB"
+  },
+  {
+    "name": "pm",
+    "max": "None",
+    "min": "60",
+    "unit": "deg",
+    "prefix": "None",
+    "description": "Phase margin"
+  }
+]

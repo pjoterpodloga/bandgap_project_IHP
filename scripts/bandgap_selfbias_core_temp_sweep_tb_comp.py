@@ -46,13 +46,16 @@ def read_corner_list():
 raw_files = sorted(glob.glob("*.raw_*"), key=sorter)
 
 corner_list = read_corner_list()
-#lib_index = corner_list[0]["cornerMOShv.lib"]
-#lib_index = corner_list[0]["cornerRES.lib"]
-#lib_index = corner_list[0]["cornerPNP.lib"]
-lib_index = corner_list[0]["xvp"]
+lib_index_mos = corner_list[0]["cornerMOShv.lib"]
+lib_index_vp = corner_list[0]["xvp"]
+lib_index = lib_index_vp
+linestyle_lib_index = corner_list[0]["cornerMOShv.lib"]
 
 v_ref_list = [None]*len(raw_files)
+lib_corner_mos = [None]*len(raw_files)
+lib_corner_vp = [None]*len(raw_files)
 lib_corner = [None]*len(raw_files)
+linestyle_lib_corner = [None]*len(raw_files)
 
 for rw in raw_files:
 
@@ -63,23 +66,36 @@ for rw in raw_files:
 
     v_ref_list[corner_number] = Signal.get_signal("v(v_ref)")
 
-    lib_corner[corner_number] = corner_list[1][corner_number][lib_index]
+    lib_corner_mos[corner_number] = corner_list[1][corner_number][lib_index_mos]
+    lib_corner_vp[corner_number] = corner_list[1][corner_number][lib_index_vp]
 
+lib_corner = lib_corner_vp
+linestyle_lib_corner = lib_corner_mos
 plt.figure(tight_layout=True)
 for it_c in range(len(lib_corner)):
 
     v_ref = v_ref_list[it_c]
     lc = lib_corner[it_c]
-    if lc == "mos_tt":
-        plt.plot(Signal.get_x_axis(), v_ref, color='g', linestyle='-')
-    if lc == "mos_ss":
-        plt.plot(Signal.get_x_axis(), v_ref, color='b', linestyle='-')
-    if lc == "mos_ff":
-        plt.plot(Signal.get_x_axis(), v_ref, color='r', linestyle='-')
-    if lc == "mos_fs":
-        plt.plot(Signal.get_x_axis(), v_ref, color='orange', linestyle='-')
-    if lc == "mos_sf":
-        plt.plot(Signal.get_x_axis(), v_ref, color='orange', linestyle='--')
+    ls_lc = linestyle_lib_corner[it_c]
+    ls = "-"
+
+    if ls_lc == "mos_tt":
+        #plt.plot(Signal.get_x_axis(), v_ref, color='g', linestyle='-')
+        ls = '-'
+    if ls_lc == "mos_ss":
+        #plt.plot(Signal.get_x_axis(), v_ref, color='b', linestyle='-')
+        ls = '--'
+    if ls_lc == "mos_ff":
+        #plt.plot(Signal.get_x_axis(), v_ref, color='r', linestyle='-')
+        ls = ':'
+    if ls_lc == "mos_fs":
+        #plt.plot(Signal.get_x_axis(), v_ref, color='orange', linestyle='-')
+        ls = ':'
+        continue
+    if ls_lc == "mos_sf":
+        #plt.plot(Signal.get_x_axis(), v_ref, color='orange', linestyle='--')
+        ls = '--'
+        continue
 
     if lc == "res_typ":
         plt.plot(Signal.get_x_axis(), v_ref, color='g', linestyle='-')
@@ -89,11 +105,11 @@ for it_c in range(len(lib_corner)):
         plt.plot(Signal.get_x_axis(), v_ref, color='r', linestyle='-')
 
     if lc == "1.8":
-        plt.plot(Signal.get_x_axis(), v_ref, color='g', linestyle='-')
+        plt.plot(Signal.get_x_axis(), v_ref, color='g', linestyle=ls)
     if lc == "1.62":
-        plt.plot(Signal.get_x_axis(), v_ref, color='b', linestyle='-')
+        plt.plot(Signal.get_x_axis(), v_ref, color='b', linestyle=ls)
     if lc == "1.98":
-        plt.plot(Signal.get_x_axis(), v_ref, color='r', linestyle='-')
+        plt.plot(Signal.get_x_axis(), v_ref, color='r', linestyle=ls)
 
     if lc == "typ":
         plt.plot(Signal.get_x_axis(), v_ref, color='g', linestyle='-')
@@ -128,7 +144,7 @@ vp_legend_elements = [
 plt.legend(handles=vp_legend_elements, 
            title="Napięcie zasilania",
            loc="upper left", 
-           bbox_to_anchor=(0.05, 0.8))
+           bbox_to_anchor=(0.05, 0.85))
 plt.grid(True)
 plt.title("Generowane napięcie referencyje w funkcji temperatury")
 plt.ylabel("Napięcie [V]")

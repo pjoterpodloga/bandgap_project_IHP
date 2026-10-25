@@ -1,0 +1,60 @@
+from ngspice_utils import *
+
+import pandas as pd
+import glob
+
+def sorter(item):
+    corner_num = int(item.split("_")[-1])
+    return corner_num
+
+raw_files = sorted(glob.glob("*.raw_*"), key=sorter)
+
+a_max_result    = [0.]*len(raw_files)
+a_max_db_result = [0.]*len(raw_files)
+vioff_result    = [0.]*len(raw_files)
+p_opamp_result    = [0.]*len(raw_files)
+
+for rw in raw_files:
+
+    corner_number = int(rw.split("_")[-1])
+
+    print()
+    print(f"Corner #{corner_number}")
+
+    parse_ngspice_raw(rw)
+
+    vp = Signal.get_signal("v(vp)")
+    vp = Signal.ymax(vp)
+
+    v_out = Signal.get_signal("v(out)")
+
+    a_dc = Signal.derivative(v_out)
+
+    a_max = Signal.ymax(a_dc)
+    a_max_db = 20*np.log10(a_max)
+
+    v_offset = Signal.cross(v_out, vp/2)
+
+    print(f"a_max: {get_value_with_prefix(a_max)}")
+    print(f"a_max_db: {get_value_with_prefix(a_max_db)}")
+    print(f"v_offset: {get_value_with_prefix(v_offset)}")
+
+    i_opamp = Signal.get_signal("i(viopamp)")
+    i_opamp = Signal.value_at(i_opamp, v_offset)
+    p_opamp = vp * i_opamp
+
+    a_max_result[corner_number]     = a_max
+    a_max_db_result[corner_number]  = a_max_db
+    vioff_result[corner_number]     = v_offset
+    p_opamp_result[corner_number]    = p_opamp
+
+    plt.figure()
+    plt.plot(Signal.get_x_axis(), a_dc)
+    plt.savefig(f"plot_{corner_number}.png")
+
+data = {"a_max": a_max_result, 
+        "a_max_db": a_max_db_result, 
+        "vioff": vioff_result,
+        "p_opamp": p_opamp_result}
+df = pd.DataFrame(data)
+df.to_csv("measure.csv")

@@ -1,0 +1,26 @@
+[
+  {
+    "name": "a_max",
+    "max": "None",
+    "min": "1000",
+    "unit": "A",
+    "prefix": "None",
+    "description": "Maximum of dc voltage gain"
+  },
+  {
+    "name": "a_max_db",
+    "max": "None",
+    "min": "60",
+    "unit": "dB",
+    "prefix": "None",
+    "description": "Maximum of dc voltage gain"
+  },
+  {
+    "name": "vioff",
+    "max": "400",
+    "min": "None",
+    "unit": "V",
+    "prefix": "u",
+    "description": "Input voltage offset"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "name": "v_ref_res",
+    "max": "1.21",
+    "min": "1.19",
+    "unit": "V",
+    "prefix": "None",
+    "description": "Output res reference voltage after buffor"
+  },
+  {
+    "name": "v_ref_sb",
+    "max": "0.81",
+    "min": "0.79",
+    "unit": "s",
+    "prefix": "n",
+    "description": "Output sb reference voltage after buffor"
+  }
+]

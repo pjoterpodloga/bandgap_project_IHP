@@ -1,0 +1,10 @@
+NAME            bandgap_bufor_ac_tb
+
+CONTROL         bandgap_bufor_ac_tb.control
+TESTBENCH       bandgap_bufor_ac_tb.sch
+CORNERS         bandgap_bufor_ac_tb.corner_gen
+VARIANTS        bandgap_bufor_ac_tb.variants.json
+SCRIPT          bandgap_bufor_ac_tb.py
+MEAS            bandgap_bufor_ac_tb.meas
+
+PLOT            plot.template.plt

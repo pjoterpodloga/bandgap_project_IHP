@@ -1,0 +1,7 @@
+lib cornerMOShv.lib
+lib cornerRES.lib
+lib cornerPNP.lib
+param xvp_18
+param xvp_33
+param xtemp
+0: mos_tt res_typ typ 1.8 3.3 25
